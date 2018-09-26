@@ -1,23 +1,51 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text , Button} from 'react-native';
+import { createStackNavigator } from 'react-navigation';
+import Home from './src/pages/Home';
+import Registration from './src/pages/Registration';
+import Payments from './src/pages/Payments';
 
-export default class App extends React.Component {
+
+
+
+
+class DetailsScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Details',
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const RootStack = createStackNavigator(
+  {
+    Home: Home,
+    Details: DetailsScreen,
+    Payments: Payments,
+    Registration: Registration
   },
-});
+  {
+    initialRouteName: 'Home',
+    cardStyle: { backgroundColor: '#e6f0f7'},
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#011f4b',
+      },
+      headerTintColor: '#e6f0f7',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  }
+);
+
+export default class App extends React.Component {
+  render() {
+    return <RootStack />;
+  }
+}
