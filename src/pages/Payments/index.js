@@ -45,7 +45,7 @@ class Payments extends React.Component {
             receiverBankAccountID: data.BankAccountID,
             isReceiverVerified: true,
           });
-          alert(`${data.CustomerName} ${data.BankName} ${data.BankAccountID}`);             //eslint-disable-line
+          alert(`ReceiverName: ${data.CustomerName} \nReceiverBank: ${data.BankName} \nReceiverBankAccount: ${data.BankAccountID}`);             //eslint-disable-line
         });
     }
 
