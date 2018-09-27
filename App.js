@@ -1,13 +1,10 @@
 import React from 'react';
-import { View, Text , Button} from 'react-native';
+import { View, Text , AsyncStorage} from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import Home from './src/pages/Home';
 import Registration from './src/pages/Registration';
 import Payments from './src/pages/Payments';
-
-
-
-
+import Login from './src/pages/Login'
 
 class DetailsScreen extends React.Component {
   static navigationOptions = {
@@ -27,10 +24,11 @@ const RootStack = createStackNavigator(
     Home: Home,
     Details: DetailsScreen,
     Payments: Payments,
-    Registration: Registration
+    Registration: Registration,
+    Login:Login
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Login',
     cardStyle: { backgroundColor: '#e6f0f7'},
     navigationOptions: {
       headerStyle: {

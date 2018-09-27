@@ -14,11 +14,6 @@ import * as styles from './style'
               Details page
             </styles.ButtonText>
         </styles.Button>
-        <styles.Button onPress={props.goToPage('Registration')}>
-            <styles.ButtonText>
-              Registration page
-            </styles.ButtonText>
-        </styles.Button>
         </styles.Container>
            );
 

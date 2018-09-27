@@ -1,12 +1,17 @@
 import React from 'react';
 import HomeView from '../../components/HomeView';
 
+
 class Home extends React.Component {
     static navigationOptions = {
       title: 'Home',
+      headerLeft:null
     };
 
+
     goToPage=(pageName)=>() => this.props.navigation.navigate(pageName)
+
+    
 
     render() {
       return (

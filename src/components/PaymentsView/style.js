@@ -24,7 +24,7 @@ export const FieldInput = styled.TextInput`
 
 
 export const Button = styled.TouchableOpacity`
-    background-color: rgb(0, 91, 150);
+    background-color: ${props=>props.enabled?'rgb(0, 91, 150)':'rgb(159, 197, 221)'};
     width: ${(Dimensions.get('window').width*0.6)};
     padding:10px;
     border-radius:5px;
