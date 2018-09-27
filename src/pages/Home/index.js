@@ -5,19 +5,16 @@ import HomeView from '../../components/HomeView';
 class Home extends React.Component {
     static navigationOptions = {
       title: 'Home',
-      headerLeft:null
+      headerLeft: null,
     };
 
-
-    goToPage=(pageName)=>() => this.props.navigation.navigate(pageName)
-
-    
+    goToPage=pageName => () => this.props.navigation.navigate(pageName)
 
     render() {
       return (
-        <HomeView goToPage={this.goToPage}/>
+        <HomeView goToPage={this.goToPage} />
       );
     }
-  }
+}
 
-  export default Home
+export default Home;
