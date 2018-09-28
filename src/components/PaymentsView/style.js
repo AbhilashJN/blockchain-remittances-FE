@@ -19,7 +19,8 @@ export const FieldName = styled.Text`
 `;
 
 export const FieldInput = styled.TextInput`
-
+    border-width:1px;
+    border-color: rgb(1, 31, 75);
 `;
 
 
