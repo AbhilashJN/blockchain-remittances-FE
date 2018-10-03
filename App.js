@@ -5,7 +5,7 @@ import Registration from './src/pages/Registration';
 import Payments from './src/pages/Payments';
 import Details from './src/pages/Details';
 import Login from './src/pages/Login';
-
+import OperationResult from './src/pages/OperationResult';
 
 const RootStack = createStackNavigator(
   {
@@ -14,13 +14,14 @@ const RootStack = createStackNavigator(
     Payments,
     Registration,
     Login,
+    OperationResult,
   },
   {
     initialRouteName: 'Login',
-    cardStyle: { backgroundColor: '#e6f0f7' },
+    cardStyle: { backgroundColor: 'rgb(0, 122, 183);' },
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#011f4b',
+        backgroundColor: 'rgb(0, 68, 102)',
       },
       headerTintColor: '#e6f0f7',
       headerTitleStyle: {

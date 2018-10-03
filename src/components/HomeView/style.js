@@ -8,14 +8,16 @@ export const Container = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    background-color: rgb(0, 91, 150);
+    background-color: rgb(249, 251, 252);
     width: ${(Dimensions.get('window').width * 0.6)};
     padding:10px;
     border-radius:5px;
-    marginVertical:10px;
-    align-items:center
+    margin-vertical:10px;
+    align-items:center;
+    align-self:center;
+    elevation:3px
 `;
 
 export const ButtonText = styled.Text`
-    color: rgb(230, 240, 247);
+    color: rgb(0, 122, 183);
 `;

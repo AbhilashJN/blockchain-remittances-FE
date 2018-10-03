@@ -1,7 +1,6 @@
 import React from 'react';
 import * as styles from './style';
 
-
 const HomeView = props => (
   <styles.Container>
     <styles.Button onPress={props.goToPage('Payments')}>

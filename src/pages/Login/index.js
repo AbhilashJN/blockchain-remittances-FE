@@ -31,7 +31,6 @@ class Login extends React.Component {
         NavigationActions.navigate({ routeName: pageName }),
       ],
     });
-
     this.props.navigation.dispatch(resetAction);
   }
 

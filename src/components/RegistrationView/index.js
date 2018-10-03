@@ -1,6 +1,7 @@
 import React from 'react';
 import * as styles from './style';
 
+
 const RegistrationView = props => (
   <styles.Container>
     <styles.Field>
