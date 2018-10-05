@@ -4,24 +4,27 @@ ADDED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src
 INJECTED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [com.facebook.fresco:animated-gif:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-gif-1.10.0.aar/2fb15063a814f72c0ba21e0a034348c0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.57.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/react-native-0.57.1.aar/3afeac1b16df85b0f0ded96937657914/AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/6b649ad6a5a0312b27909578d0f2fb7b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:animated-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-base-1.10.0.aar/a52dadf5bf39f919c14382cb29a4c8fd/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/97c397f10ff68158674700ddeff86f25/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/be7ccaaca426162ba19f1331f7506ca4/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:animated-drawable:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-drawable-1.10.0.aar/ddbab909b52d7089c2893e92b87b603e/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/00d95c64fe4925faae9c7c7d3129e385/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/2d07f48514fe195f7da21d4da582edda/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/3a69b6d9b8801cee8f209ebc7c4e9804/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/0c20775caa2089eafc987374ff2d8418/AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/8327e929e12a5ca04e6e0dd9415081c7/AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/1e820439fa1cb78ccf82e1b848fa6d4c/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/de90acb82ba29ca297a9b84555b2ec20/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/876ac011c5716c376ecb29170fdeb12c/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/108b7756718d30993a6eae2ee4ce7a91/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/136cfcc2c097b1f75f3cef95edaef7e5/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/1065c63ab52d9b6e9b319f246ce96001/AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/97c397f10ff68158674700ddeff86f25/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/be7ccaaca426162ba19f1331f7506ca4/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/00d95c64fe4925faae9c7c7d3129e385/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/2d07f48514fe195f7da21d4da582edda/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/3a69b6d9b8801cee8f209ebc7c4e9804/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/0c20775caa2089eafc987374ff2d8418/AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r174650] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/447a3fa3b2315d74fe67edefb530fff8/AndroidManifest.xml:1:1-3:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/75ce81695641326ae53800fb7fc3ccb6/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/70a73c313cfb10a6bc314009c2159a2e/AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/8327e929e12a5ca04e6e0dd9415081c7/AndroidManifest.xml:2:1-9:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c94b5b09f8bcaa20acaa03a543a81b88/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/42cde3536f60c08f080497bacaf1878b/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:1:1-26:12
@@ -74,7 +77,7 @@ ADDED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src
 	android:label
 		ADDED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:15:9-41
 	android:windowSoftInputMode
-		ADDED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:17:9-51
+		ADDED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:17:9-48
 	android:configChanges
 		ADDED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml:16:9-79
 	android:name
@@ -97,10 +100,30 @@ uses-sdk
 INJECTED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/src/main/AndroidManifest.xml
+MERGED from [com.facebook.fresco:animated-gif:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-gif-1.10.0.aar/2fb15063a814f72c0ba21e0a034348c0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:animated-gif:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-gif-1.10.0.aar/2fb15063a814f72c0ba21e0a034348c0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.57.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/react-native-0.57.1.aar/3afeac1b16df85b0f0ded96937657914/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.57.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/react-native-0.57.1.aar/3afeac1b16df85b0f0ded96937657914/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/6b649ad6a5a0312b27909578d0f2fb7b/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/6b649ad6a5a0312b27909578d0f2fb7b/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:animated-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-base-1.10.0.aar/a52dadf5bf39f919c14382cb29a4c8fd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:animated-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-base-1.10.0.aar/a52dadf5bf39f919c14382cb29a4c8fd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/97c397f10ff68158674700ddeff86f25/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/97c397f10ff68158674700ddeff86f25/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/be7ccaaca426162ba19f1331f7506ca4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/be7ccaaca426162ba19f1331f7506ca4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:animated-drawable:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-drawable-1.10.0.aar/ddbab909b52d7089c2893e92b87b603e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:animated-drawable:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-drawable-1.10.0.aar/ddbab909b52d7089c2893e92b87b603e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/00d95c64fe4925faae9c7c7d3129e385/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/00d95c64fe4925faae9c7c7d3129e385/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/2d07f48514fe195f7da21d4da582edda/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/2d07f48514fe195f7da21d4da582edda/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/3a69b6d9b8801cee8f209ebc7c4e9804/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/3a69b6d9b8801cee8f209ebc7c4e9804/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/0c20775caa2089eafc987374ff2d8418/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/0c20775caa2089eafc987374ff2d8418/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/8327e929e12a5ca04e6e0dd9415081c7/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/8327e929e12a5ca04e6e0dd9415081c7/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/1e820439fa1cb78ccf82e1b848fa6d4c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/1e820439fa1cb78ccf82e1b848fa6d4c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/de90acb82ba29ca297a9b84555b2ec20/AndroidManifest.xml:20:5-44
@@ -113,24 +136,10 @@ MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/abhilash
 MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/136cfcc2c097b1f75f3cef95edaef7e5/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/1065c63ab52d9b6e9b319f246ce96001/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/1065c63ab52d9b6e9b319f246ce96001/AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/97c397f10ff68158674700ddeff86f25/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/97c397f10ff68158674700ddeff86f25/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/be7ccaaca426162ba19f1331f7506ca4/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/be7ccaaca426162ba19f1331f7506ca4/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/00d95c64fe4925faae9c7c7d3129e385/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/00d95c64fe4925faae9c7c7d3129e385/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/2d07f48514fe195f7da21d4da582edda/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/2d07f48514fe195f7da21d4da582edda/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/3a69b6d9b8801cee8f209ebc7c4e9804/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/3a69b6d9b8801cee8f209ebc7c4e9804/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/0c20775caa2089eafc987374ff2d8418/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/0c20775caa2089eafc987374ff2d8418/AndroidManifest.xml:7:5-9:41
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/75ce81695641326ae53800fb7fc3ccb6/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/75ce81695641326ae53800fb7fc3ccb6/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/70a73c313cfb10a6bc314009c2159a2e/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/70a73c313cfb10a6bc314009c2159a2e/AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/8327e929e12a5ca04e6e0dd9415081c7/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/8327e929e12a5ca04e6e0dd9415081c7/AndroidManifest.xml:5:5-7:41
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c94b5b09f8bcaa20acaa03a543a81b88/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c94b5b09f8bcaa20acaa03a543a81b88/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] /Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/42cde3536f60c08f080497bacaf1878b/AndroidManifest.xml:20:5-44

@@ -3,28 +3,48 @@ import * as styles from './style';
 
 const DetailsView = props => (
   <styles.Container>
-    <styles.Text>
-      {`Name: ${props.credentials.CustomerName}`}
-    </styles.Text>
-    <styles.Text>
-      {`AccountID: ${props.credentials.BankAccountID}`}
-    </styles.Text>
-    {props.accountDetails && <styles.TransactionText>{`Balance:${props.accountDetails.Balance}`}</styles.TransactionText>}
-    <styles.TransactionText>
-        Transactions:
-    </styles.TransactionText>
 
-    { props.accountDetails && props.accountDetails.Transactions
-      ? props.accountDetails.Transactions.map(transaction => (
-        <styles.Transaction key={transaction.TransactionID}>
-          <styles.TransactionText>{`TxID: ${transaction.TransactionID}`}</styles.TransactionText>
-          <styles.TransactionText>{`Type: ${transaction.TransactionType}`}</styles.TransactionText>
-          <styles.TransactionText>{`To: ${transaction.To}`}</styles.TransactionText>
-          <styles.TransactionText>{`Amount: ${transaction.Amount}`}</styles.TransactionText>
-        </styles.Transaction>
-      ))
-      : <styles.TransactionText>No Transactions</styles.TransactionText>
+    <styles.DetailsHead>
+      <styles.AccountDetails>
+        <styles.UserName>{props.credentials.Name}</styles.UserName>
+        <styles.BankAccountDetailsText>{props.credentials.BankName}</styles.BankAccountDetailsText>
+        <styles.BankAccountDetailsText>
+          {props.credentials.BankAccountID}
+        </styles.BankAccountDetailsText>
+      </styles.AccountDetails>
+      {props.accountDetails && (
+      <styles.Balance>
+        <styles.BankAccountDetailsText>Balance:</styles.BankAccountDetailsText>
+        <styles.BalanceAmountText>{`$${props.accountDetails.Balance}`}</styles.BalanceAmountText>
+      </styles.Balance>
+      )}
+    </styles.DetailsHead>
+    <styles.TransactionsList>
+      <styles.TransactionHistoryText>Transaction History</styles.TransactionHistoryText>
+      { props.accountDetails && props.accountDetails.Transactions.length
+        ? props.accountDetails.Transactions.map(transaction => (
+          <styles.Transaction key={transaction.ID}>
+            <styles.TransactionDetails>
+              <styles.TransactionPeerText>
+                {transaction.Name}
+              </styles.TransactionPeerText>
+              <styles.TransactionPeerAccountText>
+                {transaction.From || transaction.To}
+              </styles.TransactionPeerAccountText>
+              <styles.TransactionIDText>{`TxID: ${transaction.ID}`}</styles.TransactionIDText>
+            </styles.TransactionDetails>
+            <styles.TransactionAmount>
+              <styles.TransactionAmountText type={transaction.TransactionType}>
+                {transaction.TransactionType === 'debit' ? '-' : '+'}
+                {' $'}
+                {transaction.Amount}
+              </styles.TransactionAmountText>
+            </styles.TransactionAmount>
+          </styles.Transaction>
+        ))
+        : <styles.TransactionHistoryText>No Transactions</styles.TransactionHistoryText>
     }
+    </styles.TransactionsList>
   </styles.Container>
 );
 
