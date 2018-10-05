@@ -3,8 +3,8 @@ import OperationResultView from '../../components/OperationResultView';
 
 class OperationResult extends React.Component {
     static navigationOptions = {
-      title: 'OperationResult',
-      headerLeft: null,
+      title: '',
+      header: null,
     };
 
 
