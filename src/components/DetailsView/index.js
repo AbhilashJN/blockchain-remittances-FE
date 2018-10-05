@@ -6,7 +6,7 @@ const DetailsView = props => (
 
     <styles.DetailsHead>
       <styles.AccountDetails>
-        <styles.UserName>{props.credentials.CustomerName}</styles.UserName>
+        <styles.UserName>{props.credentials.Name}</styles.UserName>
         <styles.BankAccountDetailsText>{props.credentials.BankName}</styles.BankAccountDetailsText>
         <styles.BankAccountDetailsText>
           {props.credentials.BankAccountID}
@@ -21,14 +21,17 @@ const DetailsView = props => (
     </styles.DetailsHead>
     <styles.TransactionsList>
       <styles.TransactionHistoryText>Transaction History</styles.TransactionHistoryText>
-      { props.accountDetails && props.accountDetails.Transactions
+      { props.accountDetails && props.accountDetails.Transactions.length
         ? props.accountDetails.Transactions.map(transaction => (
-          <styles.Transaction key={transaction.TransactionID}>
+          <styles.Transaction key={transaction.ID}>
             <styles.TransactionDetails>
               <styles.TransactionPeerText>
-                {transaction.From || transaction.To}
+                {transaction.Name}
               </styles.TransactionPeerText>
-              <styles.TransactionIDText>{`TxID: ${transaction.TransactionID}`}</styles.TransactionIDText>
+              <styles.TransactionPeerAccountText>
+                {transaction.From || transaction.To}
+              </styles.TransactionPeerAccountText>
+              <styles.TransactionIDText>{`TxID: ${transaction.ID}`}</styles.TransactionIDText>
             </styles.TransactionDetails>
             <styles.TransactionAmount>
               <styles.TransactionAmountText type={transaction.TransactionType}>
@@ -39,7 +42,7 @@ const DetailsView = props => (
             </styles.TransactionAmount>
           </styles.Transaction>
         ))
-        : <styles.TransactionIDText>No Transactions</styles.TransactionIDText>
+        : <styles.TransactionHistoryText>No Transactions</styles.TransactionHistoryText>
     }
     </styles.TransactionsList>
   </styles.Container>

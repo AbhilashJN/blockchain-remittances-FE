@@ -77,6 +77,10 @@ export const TransactionPeerText = styled.Text`
     font-weight:bold;
 `;
 
+export const TransactionPeerAccountText = styled(TransactionPeerText)`
+    font-size:15px;
+`;
+
 export const TransactionIDText = styled.Text`
     font-size:15px;
     margin:2px;

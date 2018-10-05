@@ -16,6 +16,14 @@ class Registration extends React.Component {
         PhoneNumber: '',
         BankName: '',
         BankAccountID: '',
+        bankNames: [],
+      }
+
+      componentDidMount() {
+        fetch('http://10.0.2.2:8080/getBanksList')                           //eslint-disable-line
+          .then(resp => resp.json())
+          .then(allBanks => allBanks.map(bankname => ({ value: bankname })))
+          .then(allBankNames => this.setState({ bankNames: allBankNames }));
       }
 
       updateField=fieldName => (fieldValue) => {
@@ -34,25 +42,31 @@ class Registration extends React.Component {
 
       doRegistration=() => {
         this.setState({ loading: true });
-        fetch('http://10.0.2.2:8080/registration', {                                //eslint-disable-line
+        const payload = {
+          BankName: this.state.BankName,
+          PhoneNumber: this.state.PhoneNumber,
+          BankAccountID: this.state.BankAccountID,
+        };
+        fetch('http://10.0.2.2:8080/registerNewUser', {                               //eslint-disable-line
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
           },
-          body: utils.transformPOSTpayload(this.state),
+          body: utils.transformPOSTpayload(payload),
         }).then((resp) => {
           if (resp.status === 201) {
             return resp.json();
           }
-          return {};
-        }).then(respJson => utils.storeData('credentials', { ...respJson, PhoneNumber: this.state.PhoneNumber }))
-          .then(() => {                                                //eslint-disable-line
+          alert(resp.status);                                                     //eslint-disable-line
+          throw new Error('Registration failed');
+        }).then((respJson) => { utils.storeData('credentials', { ...respJson }); })
+          .then(() => {                                                           //eslint-disable-line
             this.clearStackAndGoToPage('OperationResult', {
               type: 'Registration',
               result: 'success',
             });
           })
-          .catch((err) => { alert(err); });                                         //eslint-disable-line
+          .catch((err) => { alert(err); });                                       //eslint-disable-line
       }
 
       render() {
@@ -67,6 +81,7 @@ class Registration extends React.Component {
                 PhoneNumber={this.state.PhoneNumber}
                 BankName={this.state.BankName}
                 BankAccountID={this.state.BankAccountID}
+                bankNames={this.state.bankNames}
               />
             )
         );

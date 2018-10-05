@@ -45,3 +45,20 @@ export const Button = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
     color: rgb(0, 122, 183);
 `;
+
+
+export const DropdownStyles = {
+  baseColor: 'white',
+  textColor: 'white',
+  itemColor: 'rgb(71, 194, 255)',
+  selectedItemColor: 'white',
+  itemTextStyle: {
+    fontWeight: 'bold', padding: 10,
+  },
+  itemPadding: 10,
+  pickerStyle: { backgroundColor: 'rgb(0, 68, 102)' },
+  dropdownPosition: 0,
+  style: {
+    fontWeight: 'bold',
+  },
+};

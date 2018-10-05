@@ -15,6 +15,7 @@ class Payments extends React.Component {
       Amount: '',
       senderBankAccountID: null,
       senderName: null,
+      senderBankUrl: '',
       receiverBankName: null,
       receiverName: null,
       receiverBankAccountID: null,
@@ -43,8 +44,9 @@ class Payments extends React.Component {
       utils.retrieveData('credentials')
         .then(JSON.parse).then((creds) => {
           this.setState({
-            senderName: creds.CustomerName,
+            senderName: creds.Name,
             senderBankAccountID: creds.BankAccountID,
+            senderBankUrl: creds.BankInfo.StellarAppURL,
           });
         });
     }
@@ -54,13 +56,13 @@ class Payments extends React.Component {
         alert('Enter valid phone number and try again');                                      //eslint-disable-line
         return;
       }
-
-      fetch(`http://10.0.2.2:8080/getReceiverInfo?PhoneNumber=${this.state.receiverPhone}`)   //eslint-disable-line
+      fetch(`http://10.0.2.2:8080/getUserInfo?PhoneNumber=${this.state.receiverPhone}`)   //eslint-disable-line
         .then(resp => resp.json()).then((data) => {
           this.setState({
-            receiverName: data.CustomerName,
+            receiverName: data.Name,
             receiverBankName: data.BankName,
             receiverBankAccountID: data.BankAccountID,
+            receiverBankStellarAddress: data.BankInfo.DistributorAddress,
             isReceiverVerified: true,
           });
         });
@@ -79,14 +81,13 @@ class Payments extends React.Component {
 
       const payload = {
         Amount: this.state.Amount,
-        senderName: this.state.senderName,
-        senderBankAccountID: this.state.senderBankAccountID,
-        receiverBankAccountID: this.state.receiverBankAccountID,
-        receiverBankName: this.state.receiverBankName,
-        receiverName: this.state.receiverName,
+        SenderName: this.state.senderName,
+        SenderBankAccountID: this.state.senderBankAccountID,
+        ReceiverName: this.state.receiverName,
+        ReceiverBankAccountID: this.state.receiverBankAccountID,
+        ReceiverBankStellarDistributorAddress: this.state.receiverBankStellarAddress,
       };
-
-      fetch('http://10.0.2.2:8080/sendPayment', {                                       //eslint-disable-line
+      fetch(`http://${this.state.senderBankUrl.replace("localhost","10.0.2.2")}/sendPayment`, {                                       //eslint-disable-line
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
