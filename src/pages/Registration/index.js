@@ -8,7 +8,6 @@ class Registration extends React.Component {
     static navigationOptions = {
       title: 'Registration',
       headerLeft: null,
-      loading: false,
     };
 
       state={
@@ -17,6 +16,7 @@ class Registration extends React.Component {
         BankName: '',
         BankAccountID: '',
         bankNames: [],
+        loading: false,
       }
 
       componentDidMount() {
