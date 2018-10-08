@@ -3,6 +3,7 @@ import { StackActions, NavigationActions } from 'react-navigation';
 import PaymentsView from '../../components/PaymentsView';
 import Loader from '../../components/Loader';
 import * as utils from '../../utils/common';
+import contacts from './data';
 
 class Payments extends React.Component {
     static navigationOptions = {
@@ -20,6 +21,7 @@ class Payments extends React.Component {
       receiverName: null,
       receiverBankAccountID: null,
       loading: false,
+      receiverMode: 'numpad',
     }
 
     componentDidMount() {
@@ -28,6 +30,10 @@ class Payments extends React.Component {
 
     updateField=fieldName => (fieldValue) => {
       this.setState({ [fieldName]: fieldValue });
+    }
+
+    switchReceiverMode=mode => () => {
+      this.setState({ receiverMode: mode });
     }
 
     clearStackAndGoToPage=(pageName, params) => {
@@ -64,6 +70,15 @@ class Payments extends React.Component {
             receiverBankAccountID: data.BankAccountID,
             receiverBankStellarAddress: data.BankInfo.DistributorAddress,
             isReceiverVerified: true,
+          });
+        })
+        .catch(() => {
+          this.setState({
+            receiverName: '',
+            receiverBankName: '',
+            receiverBankAccountID: '',
+            receiverBankStellarAddress: '',
+            isReceiverVerified: false,
           });
         });
     }
@@ -110,6 +125,9 @@ class Payments extends React.Component {
               receiverName={this.state.receiverName}
               receiverBankName={this.state.receiverBankName}
               receiverPhone={this.state.receiverPhone}
+              contacts={contacts}
+              receiverMode={this.state.receiverMode}
+              switchReceiverMode={this.switchReceiverMode}
             />
           )
       );
