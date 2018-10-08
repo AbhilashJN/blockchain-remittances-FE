@@ -121,7 +121,7 @@ export const DropdownStyles = {
     fontWeight: 'bold', padding: 10,
   },
   itemPadding: 10,
-  containerStyle: { flex: 1 },
+  containerStyle: { flex: 1, marginRight: 10 },
   pickerStyle: { backgroundColor: 'rgb(0, 68, 102)' },
   dropdownPosition: 0,
   style: {
@@ -133,6 +133,7 @@ export const DropdownStyles = {
 
 
 export const FieldButton = styled.TouchableOpacity`
+    margin-top:25px;
     justify-content:center;
     align-items:center;
 `;
