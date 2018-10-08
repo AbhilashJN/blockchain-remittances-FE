@@ -73,7 +73,7 @@ class Payments extends React.Component {
           });
         })
         .catch(() => {
-          alert('Unable to verify receiver');
+          alert('Unable to verify receiver');                                             //eslint-disable-line
           this.setState({
             receiverName: '',
             receiverBankName: '',
