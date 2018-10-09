@@ -6,6 +6,8 @@ import Payments from './src/pages/Payments';
 import Details from './src/pages/Details';
 import Login from './src/pages/Login';
 import OperationResult from './src/pages/OperationResult';
+import NewRecipient from './src/pages/NewRecipient';
+import WithdrawDeposit from './src/pages/WithdrawDeposit';
 
 const RootStack = createStackNavigator(
   {
@@ -15,6 +17,8 @@ const RootStack = createStackNavigator(
     Registration,
     Login,
     OperationResult,
+    NewRecipient,
+    WithdrawDeposit,
   },
   {
     initialRouteName: 'Login',
