@@ -4,8 +4,8 @@ const contacts = [
     PhoneNumber: '9976543210',
   },
   {
-    Name: 'Sandeep',
-    PhoneNumber: '2342342342',
+    Name: 'Milan',
+    PhoneNumber: '8976543210',
   },
 ];
 

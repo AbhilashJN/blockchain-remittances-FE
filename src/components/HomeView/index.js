@@ -5,12 +5,12 @@ const HomeView = props => (
   <styles.Container>
     <styles.Button onPress={props.goToPage('Payments')}>
       <styles.ButtonText>
-             Payment
+             Make a Payment
       </styles.ButtonText>
     </styles.Button>
     <styles.Button onPress={props.goToPage('Details')}>
       <styles.ButtonText>
-              Details
+              View Transaction Details
       </styles.ButtonText>
     </styles.Button>
     <styles.Button onPress={props.goToPage('WithdrawDeposit')}>

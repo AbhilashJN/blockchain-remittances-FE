@@ -77,7 +77,7 @@ class Payments extends React.Component {
         alert('Enter valid phone number and try again');                                      //eslint-disable-line
         return;
       }
-      fetch(`http://10.0.2.2:8080/getUserInfo?PhoneNumber=${this.state.receiverPhone}`)   //eslint-disable-line
+      fetch(`http://${utils.localhostURL}:8080/getUserInfo?PhoneNumber=${this.state.receiverPhone}`)   //eslint-disable-line
         .then(resp => resp.json()).then((data) => {
           this.setState({
             receiverName: data.Name,
@@ -86,7 +86,7 @@ class Payments extends React.Component {
             receiverBankStellarAddress: data.BankInfo.DistributorAddress,
             receiverCurrency: data.BankInfo.NativeCurrency,
             isReceiverVerified: true,
-            exchangeRate: this.getExchangeRate(this.state.senderCurrency, data.BankInfo.NativeCurrency),
+            exchangeRate: this.getExchangeRate(this.state.senderCurrency, data.BankInfo.NativeCurrency),        //eslint-disable-line
           });
         })
         .catch(() => {
@@ -120,7 +120,7 @@ class Payments extends React.Component {
         ReceiverBankAccountID: this.state.receiverBankAccountID,
         ReceiverBankStellarDistributorAddress: this.state.receiverBankStellarAddress,
       };
-      fetch(`http://${this.state.senderBankUrl.replace("localhost","10.0.2.2")}/sendPayment`, {                                       //eslint-disable-line
+      fetch(`http://${this.state.senderBankUrl.replace("localhost",utils.localhostURL)}/sendPayment`, {                                       //eslint-disable-line
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',

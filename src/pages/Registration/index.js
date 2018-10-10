@@ -20,7 +20,7 @@ class Registration extends React.Component {
       }
 
       componentDidMount() {
-        fetch('http://10.0.2.2:8080/getBanksList')                           //eslint-disable-line
+        fetch(`http://${utils.localhostURL}:8080/getBanksList`)                               //eslint-disable-line
           .then(resp => resp.json())
           .then(allBanks => allBanks.map(bankname => ({ value: bankname })))
           .then(allBankNames => this.setState({ bankNames: allBankNames }));
@@ -47,7 +47,7 @@ class Registration extends React.Component {
           PhoneNumber: this.state.PhoneNumber,
           BankAccountID: this.state.BankAccountID,
         };
-        fetch('http://10.0.2.2:8080/registerNewUser', {                               //eslint-disable-line
+        fetch(`http://${utils.localhostURL}:8080/registerNewUser`, {                               //eslint-disable-line
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',

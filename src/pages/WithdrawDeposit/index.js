@@ -44,7 +44,7 @@ class WithdrawDeposit extends React.Component {
         AccountID: this.state.credentials.BankAccountID,
       };
       const endpoint = actionType === 'Withdraw' ? 'withdrawAmount' : 'depositAmount';
-      fetch(`http://${this.state.credentials.BankInfo.StellarAppURL.replace('localhost', '10.0.2.2')}/${endpoint}`,         //eslint-disable-line
+      fetch(`http://${this.state.credentials.BankInfo.StellarAppURL.replace('localhost', utils.localhostURL)}/${endpoint}`,         //eslint-disable-line
         {
           method: 'POST',
           headers: {

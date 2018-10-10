@@ -1,7 +1,6 @@
 import React from 'react';
 import HomeView from '../../components/HomeView';
 
-
 class Home extends React.Component {
     static navigationOptions = {
       title: 'Home',

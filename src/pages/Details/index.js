@@ -21,7 +21,7 @@ class Details extends React.Component {
     getTransactionDetails=() => {
       this.getCredentials()
         .then((creds) => {
-          fetch(`http://${creds.BankInfo.StellarAppURL.replace("localhost","10.0.2.2")}/accountDetails?BankAccountID=${creds.BankAccountID}`)       //eslint-disable-line
+          fetch(`http://${creds.BankInfo.StellarAppURL.replace("localhost",utils.localhostURL)}/accountDetails?BankAccountID=${creds.BankAccountID}`)       //eslint-disable-line
             .then(resp => resp.json())
             .then((data) => {
               this.setState({

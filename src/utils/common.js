@@ -1,4 +1,4 @@
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage, Platform } from 'react-native';
 
 export const noop = () => {};
 
@@ -40,3 +40,9 @@ export const transformPOSTpayload = (payload) => {
 
   return formBody.join('&');
 };
+
+
+export const localhostURL = Platform.select({
+  ios: 'localhost',
+  android: '10.0.2.2',
+});

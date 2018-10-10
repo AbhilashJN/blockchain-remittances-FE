@@ -38,6 +38,12 @@ export const FieldIcon = styled.Image`
 
 `;
 
+export const FieldCurrency = styled.Text`
+font-size:20px;
+color:white;
+font-weight:bold;
+margin-top:35px;
+`;
 
 export const FieldInput = styled.TextInput`
     border-left-width:0px;
@@ -47,7 +53,8 @@ export const FieldInput = styled.TextInput`
     border-color: rgba(229, 229, 229, 0.6);
     font-size:20px;
     color:white;
-    margin-top:25px
+    margin-top:25px;
+    width:${(Dimensions.get('window').width * 0.75)};
 `;
 
 

@@ -56,7 +56,10 @@ const PaymentsView = props => (
     }
     <styles.Field>
       <styles.FieldName>Amount</styles.FieldName>
-      <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
+      <styles.FieldBody>
+        <styles.FieldCurrency>{props.senderCurrency}</styles.FieldCurrency>
+        <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
+      </styles.FieldBody>
     </styles.Field>
     <styles.Button onPress={props.makePayment} enabled={props.isReceiverVerified}>
       <styles.ButtonText>Confirm</styles.ButtonText>
