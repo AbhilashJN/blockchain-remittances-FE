@@ -57,7 +57,7 @@ class WithdrawDeposit extends React.Component {
           body: utils.transformPOSTpayload(payload),
         })
         .then(resp => resp.text())
-        .then((responseText) => { this.clearStackAndGoToPage('OperationResult', { type: actionType, result: responseText }); });
+        .then((responseText) => { this.clearStackAndGoToPage('OperationResult', { type: actionType, result: responseText, theme: this.props.navigation.getParam('theme') }); });
     }
 
     render() {

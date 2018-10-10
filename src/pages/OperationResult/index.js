@@ -12,7 +12,7 @@ class OperationResult extends React.Component {
     });
 
 
-    goToPage=(pageName, params) => () => this.props.navigation.navigate(pageName, params)
+    goToPage=(pageName, params) => () => this.props.navigation.navigate(pageName, { ...params, BankName: this.props.navigation.getParam('BankName') })
 
     render() {
       return (

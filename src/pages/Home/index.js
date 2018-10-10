@@ -15,7 +15,7 @@ class Home extends React.Component {
 
     render() {
       return (
-        <ThemeProvider theme={this.props.navigation.getParam('theme')}><HomeView goToPage={this.goToPage} /></ThemeProvider>
+        <ThemeProvider theme={this.props.navigation.getParam('theme')}><HomeView goToPage={this.goToPage} bankName={this.props.navigation.getParam('BankName')} /></ThemeProvider>
       );
     }
 }

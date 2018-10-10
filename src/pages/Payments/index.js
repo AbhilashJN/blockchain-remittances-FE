@@ -145,6 +145,7 @@ class Payments extends React.Component {
             type: 'Payment',
             result,
             messages,
+            theme: this.props.navigation.getParam('theme'),
           });
         });
     }
@@ -152,7 +153,7 @@ class Payments extends React.Component {
     render() {
       return (
         this.state.loading
-          ? <Loader />
+          ? <Loader theme={this.props.navigation.getParam('theme')} />
           : (
             <ThemeProvider theme={this.props.navigation.getParam('theme')}>
               <PaymentsView

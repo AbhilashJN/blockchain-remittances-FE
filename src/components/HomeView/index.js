@@ -3,6 +3,7 @@ import * as styles from './style';
 
 const HomeView = props => (
   <styles.Container>
+    <styles.BankName>{props.bankName}</styles.BankName>
     <styles.Button onPress={props.goToPage('Payments')}>
       <styles.ButtonText>
              Make a Payment

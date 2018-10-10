@@ -8,6 +8,14 @@ export const Container = styled.View`
     background-color:${props => props.theme.cardBackground}
 `;
 
+
+export const BankName = styled.Text`
+align-self:center;
+font-size:40px;
+font-weight:bold;
+color:rgba(255,255,255,0.5);
+`;
+
 export const Button = styled.TouchableOpacity`
     background-color: rgb(249, 251, 252);
     width: ${(Dimensions.get('window').width * 0.6)};
@@ -19,7 +27,6 @@ export const Button = styled.TouchableOpacity`
     elevation:3px
 `;
 
-// color: rgb(0, 122, 183);
 export const ButtonText = styled.Text`
     color: ${props => props.theme.buttonText}
 `;

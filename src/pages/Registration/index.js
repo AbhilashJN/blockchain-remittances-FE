@@ -66,6 +66,7 @@ class Registration extends React.Component {
               type: 'Registration',
               result: 'success',
               theme: this.state.BankName === 'SBI' ? themeA : themeB,
+              BankName: this.state.BankName,
             });
           })
           .catch((err) => { alert(err); });                                       //eslint-disable-line
