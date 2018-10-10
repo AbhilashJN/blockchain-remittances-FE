@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.View`
     flex:1;
     justify-content:flex-start;
-    padding-horizontal:5px
+    padding-horizontal:5px;
+    background-color:${props => props.theme.cardBackground}
 `;
 
 
@@ -12,7 +13,7 @@ flex-direction:row;
 justify-content:space-between;
 padding-vertical:10px;
 padding-horizontal:15px;
-background-color:#00a3f5;
+background-color:${props => props.theme.detailsHeadBg};
 border-radius:5px;
 margin-vertical:10px;
 `;

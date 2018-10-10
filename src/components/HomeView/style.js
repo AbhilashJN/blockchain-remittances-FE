@@ -5,6 +5,7 @@ export const Container = styled.View`
     flex:1;
     align-items:center;
     justify-content:center;
+    background-color:${props => props.theme.cardBackground}
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -18,6 +19,7 @@ export const Button = styled.TouchableOpacity`
     elevation:3px
 `;
 
+// color: rgb(0, 122, 183);
 export const ButtonText = styled.Text`
-    color: rgb(0, 122, 183);
+    color: ${props => props.theme.buttonText}
 `;

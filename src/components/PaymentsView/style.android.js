@@ -6,6 +6,7 @@ export const Container = styled.View`
     justify-content:space-between;
     align-items:stretch;
     padding:20px;
+    background-color:${props => props.theme.cardBackground}
 `;
 
 export const Field = styled.View`
@@ -71,7 +72,7 @@ font-size:15px;
 
 
 export const Button = styled.TouchableOpacity`
-    background-color: ${props => (props.enabled ? 'rgb(249, 251, 252)' : 'rgb(159, 197, 221)')};
+    background-color: ${props => (props.enabled ? 'rgb(249, 251, 252)' : props.theme.buttonDisabled)};
     width: ${(Dimensions.get('window').width * 0.6)};
     padding:10px;
     border-radius:5px;
@@ -82,7 +83,7 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-    color: rgb(0, 122, 183);
+    color: ${props => props.theme.buttonText}
 `;
 
 

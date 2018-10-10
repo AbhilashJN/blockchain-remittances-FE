@@ -1,12 +1,16 @@
 import React from 'react';
 import { StackActions, NavigationActions } from 'react-navigation';
+import { ThemeProvider } from 'styled-components';
 import WithdrawDepositView from '../../components/WithdrawDepositView';
 import * as utils from '../../utils/common';
 
 class WithdrawDeposit extends React.Component {
-    static navigationOptions = {
+    static navigationOptions =({ navigation }) => ({
       title: 'Withdraw/Deposit',
-    };
+      headerStyle: {
+        backgroundColor: navigation.getParam('theme').headerBackground,
+      },
+    });
 
     state={
       Amount: '',
@@ -58,7 +62,9 @@ class WithdrawDeposit extends React.Component {
 
     render() {
       return (
-        <WithdrawDepositView updateAmount={this.updateAmount} doAction={this.doAction} />
+        <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+          <WithdrawDepositView updateAmount={this.updateAmount} doAction={this.doAction} />
+        </ThemeProvider>
       );
     }
 }

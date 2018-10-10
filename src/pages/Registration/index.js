@@ -3,6 +3,7 @@ import { StackActions, NavigationActions } from 'react-navigation';
 import RegistrationView from '../../components/RegistrationView';
 import Loader from '../../components/Loader';
 import * as utils from '../../utils/common';
+import { themeA, themeB } from '../../utils/themes';
 
 class Registration extends React.Component {
     static navigationOptions = {
@@ -64,6 +65,7 @@ class Registration extends React.Component {
             this.clearStackAndGoToPage('OperationResult', {
               type: 'Registration',
               result: 'success',
+              theme: this.state.BankName === 'SBI' ? themeA : themeB,
             });
           })
           .catch((err) => { alert(err); });                                       //eslint-disable-line

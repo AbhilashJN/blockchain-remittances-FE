@@ -4,6 +4,7 @@ import { Dimensions } from 'react-native';
 export const Container = styled.View`
 flex:1;
 padding:15px;
+background-color:${props => props.theme.cardBackground}
 `;
 
 export const Field = styled.View`
@@ -46,5 +47,5 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-    color: rgb(0, 122, 183);
+    color: ${props => props.theme.buttonText}
 `;

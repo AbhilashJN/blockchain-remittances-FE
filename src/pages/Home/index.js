@@ -1,17 +1,21 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import HomeView from '../../components/HomeView';
 
 class Home extends React.Component {
-    static navigationOptions = {
+    static navigationOptions =({ navigation }) => ({
       title: 'Home',
       headerLeft: null,
-    };
+      headerStyle: {
+        backgroundColor: navigation.getParam('theme').headerBackground,
+      },
+    });
 
-    goToPage=pageName => () => this.props.navigation.navigate(pageName)
+    goToPage=pageName => () => this.props.navigation.navigate(pageName, { theme: this.props.navigation.getParam('theme') })
 
     render() {
       return (
-        <HomeView goToPage={this.goToPage} />
+        <ThemeProvider theme={this.props.navigation.getParam('theme')}><HomeView goToPage={this.goToPage} /></ThemeProvider>
       );
     }
 }

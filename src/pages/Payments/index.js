@@ -1,14 +1,18 @@
 import React from 'react';
 import { StackActions, NavigationActions } from 'react-navigation';
+import { ThemeProvider } from 'styled-components';
 import PaymentsView from '../../components/PaymentsView';
 import Loader from '../../components/Loader';
 import * as utils from '../../utils/common';
 import contacts from './data';
 
 class Payments extends React.Component {
-    static navigationOptions = {
+    static navigationOptions = ({ navigation }) => ({
       title: 'Payments',
-    };
+      headerStyle: {
+        backgroundColor: navigation.getParam('theme').headerBackground,
+      },
+    });
 
     state={
       isReceiverVerified: false,
@@ -150,21 +154,23 @@ class Payments extends React.Component {
         this.state.loading
           ? <Loader />
           : (
-            <PaymentsView
-              makePayment={this.makePayment}
-              update={this.updateField}
-              verifyReceiver={this.verifyReceiver}
-              isReceiverVerified={this.state.isReceiverVerified}
-              receiverName={this.state.receiverName}
-              receiverBankName={this.state.receiverBankName}
-              receiverPhone={this.state.receiverPhone}
-              contacts={contacts}
-              receiverMode={this.state.receiverMode}
-              switchReceiverMode={this.switchReceiverMode}
-              exchangeRate={this.state.exchangeRate}
-              senderCurrency={this.state.senderCurrency}
-              receiverCurrency={this.state.receiverCurrency}
-            />
+            <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+              <PaymentsView
+                makePayment={this.makePayment}
+                update={this.updateField}
+                verifyReceiver={this.verifyReceiver}
+                isReceiverVerified={this.state.isReceiverVerified}
+                receiverName={this.state.receiverName}
+                receiverBankName={this.state.receiverBankName}
+                receiverPhone={this.state.receiverPhone}
+                contacts={contacts}
+                receiverMode={this.state.receiverMode}
+                switchReceiverMode={this.switchReceiverMode}
+                exchangeRate={this.state.exchangeRate}
+                senderCurrency={this.state.senderCurrency}
+                receiverCurrency={this.state.receiverCurrency}
+              />
+            </ThemeProvider>
           )
       );
     }

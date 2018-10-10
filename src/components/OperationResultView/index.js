@@ -17,7 +17,7 @@ const OperationResultView = props => (
       }
     </styles.Message>
     )}
-    <styles.Button onPress={props.goToPage('Home')}>
+    <styles.Button onPress={props.goToPage('Home', { theme: props.theme })}>
       <styles.ButtonText>
               Home
       </styles.ButtonText>

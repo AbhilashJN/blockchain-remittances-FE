@@ -5,6 +5,7 @@ export const Container = styled.View`
 flex:1;
 justify-content:center;
 align-items:center;
+background-color:${props => props.theme.cardBackground}
 `;
 
 
@@ -33,11 +34,11 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-    color: rgb(0, 122, 183);
+    color: ${props => props.theme.buttonText};
 `;
 
 export const Message = styled.View`
-    background-color: rgb(0, 68, 102);
+    background-color: ${props => props.theme.messageBackground}
     border-radius:5px;
     elevation:-3;
     padding:10px;
