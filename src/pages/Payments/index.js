@@ -14,14 +14,17 @@ class Payments extends React.Component {
       isReceiverVerified: false,
       receiverPhone: '',
       Amount: '',
-      senderBankAccountID: null,
-      senderName: null,
+      senderBankAccountID: '',
+      senderCurrency: '',
+      senderName: '',
       senderBankUrl: '',
-      receiverBankName: null,
-      receiverName: null,
-      receiverBankAccountID: null,
+      receiverBankName: '',
+      receiverName: '',
+      receiverBankAccountID: '',
+      receiverCurrency: '',
       loading: false,
       receiverMode: 'numpad',
+      exchangeRate: 80,
     }
 
     componentDidMount() {
@@ -53,8 +56,20 @@ class Payments extends React.Component {
             senderName: creds.Name,
             senderBankAccountID: creds.BankAccountID,
             senderBankUrl: creds.BankInfo.StellarAppURL,
+            senderCurrency: creds.BankInfo.NativeCurrency,
           });
         });
+    }
+
+    getExchangeRate=(senderCurrency, receiverCurrency) => {
+      if (senderCurrency === receiverCurrency) {
+        return 1;
+      }
+      if (senderCurrency === 'INR') {
+        return 1 / 80;
+      }
+
+      return 80;
     }
 
     verifyReceiver=() => {
@@ -69,7 +84,9 @@ class Payments extends React.Component {
             receiverBankName: data.BankName,
             receiverBankAccountID: data.BankAccountID,
             receiverBankStellarAddress: data.BankInfo.DistributorAddress,
+            receiverCurrency: data.BankInfo.NativeCurrency,
             isReceiverVerified: true,
+            exchangeRate: this.getExchangeRate(this.state.senderCurrency, data.BankInfo.NativeCurrency),
           });
         })
         .catch(() => {
@@ -110,7 +127,22 @@ class Payments extends React.Component {
         },
         body: utils.transformPOSTpayload(payload),
       }).then(response => response.text())
-        .then((responseText) => { this.clearStackAndGoToPage('OperationResult', { type: 'Payment', result: responseText }); });
+        .then((responseText) => {
+          let messages;
+          let result = '';
+          if (responseText === 'success') {
+            result = responseText;
+            messages = [`Amount debited from your account : ${this.state.senderCurrency} ${this.state.Amount}`,
+              `Amount credited to ${this.state.receiverName}'s account : ${this.state.receiverCurrency} ${this.state.exchangeRate * this.state.Amount}`];
+          } else {
+            result = `failed! ${responseText}`;
+          }
+          this.clearStackAndGoToPage('OperationResult', {
+            type: 'Payment',
+            result,
+            messages,
+          });
+        });
     }
 
     render() {
@@ -129,6 +161,9 @@ class Payments extends React.Component {
               contacts={contacts}
               receiverMode={this.state.receiverMode}
               switchReceiverMode={this.switchReceiverMode}
+              exchangeRate={this.state.exchangeRate}
+              senderCurrency={this.state.senderCurrency}
+              receiverCurrency={this.state.receiverCurrency}
             />
           )
       );

@@ -88,6 +88,13 @@ export const TransactionIDText = styled.Text`
 `;
 
 
+export const TransactionTimeText = styled.Text`
+    font-size:15px;
+    margin:2px;
+    color:black;
+    font-weight:bold;
+`;
+
 export const TransactionAmountText = styled.Text`
     color:${props => (props.type === 'debit' ? 'rgb(150, 21, 21)' : 'rgb(22, 150, 65)')};
     font-size: 20px;

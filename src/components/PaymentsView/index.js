@@ -48,6 +48,8 @@ const PaymentsView = props => (
           <styles.ReceiverName>{props.receiverName}</styles.ReceiverName>
           <styles.ReceiverBankName>{props.receiverBankName}</styles.ReceiverBankName>
           <styles.ReceiverBankName>{props.receiverPhone}</styles.ReceiverBankName>
+          <styles.ReceiverBankName>{`Currency : ${props.receiverCurrency}`}</styles.ReceiverBankName>
+          <styles.ReceiverBankName>{`Exchange Rate : 1 ${props.senderCurrency} = ${props.exchangeRate} ${props.receiverCurrency}`}</styles.ReceiverBankName>
         </styles.ReceiverInfo>
       </styles.ReceiverInfoCard>
     )

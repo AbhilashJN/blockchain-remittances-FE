@@ -18,11 +18,11 @@ const HomeView = props => (
               Withdraw/Deposit
       </styles.ButtonText>
     </styles.Button>
-    <styles.Button onPress={props.goToPage('NewRecipient')}>
+    {/* <styles.Button onPress={props.goToPage('NewRecipient')}>
       <styles.ButtonText>
               New Recipient
       </styles.ButtonText>
-    </styles.Button>
+    </styles.Button> */}
   </styles.Container>
 );
 

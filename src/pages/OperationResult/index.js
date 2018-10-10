@@ -12,7 +12,7 @@ class OperationResult extends React.Component {
 
     render() {
       return (
-        <OperationResultView type={this.props.navigation.getParam('type')} result={this.props.navigation.getParam('result')} goToPage={this.goToPage} />
+        <OperationResultView type={this.props.navigation.getParam('type')} result={this.props.navigation.getParam('result')} messages={this.props.navigation.getParam('messages')} goToPage={this.goToPage} />
       );
     }
 }
