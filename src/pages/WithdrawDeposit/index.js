@@ -14,7 +14,7 @@ class WithdrawDeposit extends React.Component {
 
     state={
       Amount: '',
-      credentials: {},
+      credentials: { BankInfo: { NativeCurrency: 'INR' } },
     }
 
     componentDidMount() {
@@ -63,7 +63,7 @@ class WithdrawDeposit extends React.Component {
     render() {
       return (
         <ThemeProvider theme={this.props.navigation.getParam('theme')}>
-          <WithdrawDepositView updateAmount={this.updateAmount} doAction={this.doAction} />
+          <WithdrawDepositView updateAmount={this.updateAmount} doAction={this.doAction} currency={this.state.credentials.BankInfo.NativeCurrency} />
         </ThemeProvider>
       );
     }

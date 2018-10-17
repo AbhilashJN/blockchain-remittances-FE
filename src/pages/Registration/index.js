@@ -65,7 +65,7 @@ class Registration extends React.Component {
             this.clearStackAndGoToPage('OperationResult', {
               type: 'Registration',
               result: 'success',
-              theme: this.state.BankName === 'SBI' ? themeA : themeB,
+              theme: this.state.BankName === 'ALPHA' ? themeA : themeB,
               BankName: this.state.BankName,
             });
           })
@@ -75,7 +75,7 @@ class Registration extends React.Component {
       render() {
         return (
           this.state.loading
-            ? <Loader />
+            ? <Loader theme={themeA} />
             : (
               <RegistrationView
                 doRegistration={this.doRegistration}

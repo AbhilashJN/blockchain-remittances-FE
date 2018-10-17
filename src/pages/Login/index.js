@@ -19,7 +19,7 @@ class Login extends React.Component {
       .then(resp => JSON.parse(resp))
       .then((data) => {
         if (data !== null) {
-          this.clearStackAndGoToPage('Home', { BankName: data.BankName, theme: data.BankName === 'SBI' ? themeA : themeB });
+          this.clearStackAndGoToPage('Home', { BankName: data.BankName, theme: data.BankName === 'ALPHA' ? themeA : themeB });
         } else {
           this.clearStackAndGoToPage('Registration');
         }

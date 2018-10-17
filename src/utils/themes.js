@@ -11,12 +11,12 @@ export const themeA = {
 
 
 export const themeB = {
-  cardBackground: 'rgb(183, 24, 0)',
-  headerBackground: 'rgb(102, 24, 0)',
-  pickerBackground: 'rgb(102, 24, 0)',
+  cardBackground: 'rgb(109, 183, 0)',
+  headerBackground: 'rgb(18, 102, 0)',
+  pickerBackground: 'rgb(18, 102, 0)',
   dropdownItemColor: 'rgb(255, 71, 71)',
-  buttonText: 'rgb(183, 24, 0)',
-  messageBackground: 'rgb(102, 24, 0)',
-  detailsHeadBg: 'rgb(245, 0, 0)',
-  buttonDisabled: 'rgb(221, 159, 159)',
+  buttonText: 'rgb(109, 183, 0)',
+  messageBackground: 'rgb(18, 102, 0)',
+  detailsHeadBg: 'rgb(69, 211, 8)',
+  buttonDisabled: 'rgb(172, 221, 159)',
 };

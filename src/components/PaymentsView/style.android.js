@@ -73,7 +73,7 @@ font-size:15px;
 
 export const Button = styled.TouchableOpacity`
     background-color: ${props => (props.enabled ? 'rgb(249, 251, 252)' : props.theme.buttonDisabled)};
-    width: ${(Dimensions.get('window').width * 0.6)};
+    width: ${(Dimensions.get('window').width * 0.7)};
     padding:10px;
     border-radius:5px;
     margin-vertical:10px;
@@ -83,7 +83,8 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-    color: ${props => props.theme.buttonText}
+    color: ${props => props.theme.buttonText};
+    font-size:20px;
 `;
 
 

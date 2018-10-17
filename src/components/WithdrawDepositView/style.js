@@ -18,6 +18,18 @@ export const FieldName = styled.Text`
     font-weight:bold
 `;
 
+export const FieldBody = styled.View`
+flex-direction:row;
+justify-content:space-between;
+`;
+
+export const FieldCurrency = styled.Text`
+font-size:20px;
+color:white;
+font-weight:bold;
+margin-top:20px;
+`;
+
 export const FieldInput = styled.TextInput`
     border-left-width:0px;
     border-right-width:0px;
@@ -26,7 +38,9 @@ export const FieldInput = styled.TextInput`
     border-color: white;
     font-size:20px;
     color:white;
-    font-weight:bold`;
+    font-weight:bold;
+    width:${(Dimensions.get('window').width * 0.75)};
+    `;
 
 export const ActionRow = styled.View`
 flex-direction:row;
