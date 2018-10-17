@@ -3,6 +3,7 @@ import { StackActions, NavigationActions } from 'react-navigation';
 import RegistrationView from '../../components/RegistrationView';
 import Loader from '../../components/Loader';
 import * as utils from '../../utils/common';
+import { themeA, themeB } from '../../utils/themes';
 
 class Registration extends React.Component {
     static navigationOptions = {
@@ -20,7 +21,7 @@ class Registration extends React.Component {
       }
 
       componentDidMount() {
-        fetch('http://10.0.2.2:8080/getBanksList')                           //eslint-disable-line
+        fetch(`http://${utils.localhostURL}:8080/getBanksList`)                               //eslint-disable-line
           .then(resp => resp.json())
           .then(allBanks => allBanks.map(bankname => ({ value: bankname })))
           .then(allBankNames => this.setState({ bankNames: allBankNames }));
@@ -47,7 +48,7 @@ class Registration extends React.Component {
           PhoneNumber: this.state.PhoneNumber,
           BankAccountID: this.state.BankAccountID,
         };
-        fetch('http://10.0.2.2:8080/registerNewUser', {                               //eslint-disable-line
+        fetch(`http://${utils.localhostURL}:8080/registerNewUser`, {                               //eslint-disable-line
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -64,6 +65,8 @@ class Registration extends React.Component {
             this.clearStackAndGoToPage('OperationResult', {
               type: 'Registration',
               result: 'success',
+              theme: this.state.BankName === 'ALPHA' ? themeA : themeB,
+              BankName: this.state.BankName,
             });
           })
           .catch((err) => { alert(err); });                                       //eslint-disable-line
@@ -72,7 +75,7 @@ class Registration extends React.Component {
       render() {
         return (
           this.state.loading
-            ? <Loader />
+            ? <Loader theme={themeA} />
             : (
               <RegistrationView
                 doRegistration={this.doRegistration}

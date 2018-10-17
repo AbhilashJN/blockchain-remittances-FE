@@ -10,7 +10,14 @@ const OperationResultView = props => (
     <styles.ResultText>
       {`${props.type} ${props.result}!`}
     </styles.ResultText>
-    <styles.Button onPress={props.goToPage('Home')}>
+    {props.messages && (
+    <styles.Message>
+      {
+        props.messages.map(msg => <styles.MessageText key={msg}>{msg}</styles.MessageText>)
+      }
+    </styles.Message>
+    )}
+    <styles.Button onPress={props.goToPage('Home', { theme: props.theme })}>
       <styles.ButtonText>
               Home
       </styles.ButtonText>

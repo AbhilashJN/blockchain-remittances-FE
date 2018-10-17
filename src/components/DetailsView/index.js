@@ -15,28 +15,31 @@ const DetailsView = props => (
       {props.accountDetails && (
       <styles.Balance>
         <styles.BankAccountDetailsText>Balance:</styles.BankAccountDetailsText>
-        <styles.BalanceAmountText>{`$${props.accountDetails.Balance}`}</styles.BalanceAmountText>
+        <styles.BalanceAmountText>{`${props.credentials.BankInfo.NativeCurrency === 'INR' ? '₹' : '$'} ${props.accountDetails.Balance}`}</styles.BalanceAmountText>
       </styles.Balance>
       )}
     </styles.DetailsHead>
     <styles.TransactionsList>
       <styles.TransactionHistoryText>Transaction History</styles.TransactionHistoryText>
       { props.accountDetails && props.accountDetails.Transactions.length
-        ? props.accountDetails.Transactions.map(transaction => (
-          <styles.Transaction key={transaction.ID}>
+        ? props.accountDetails.Transactions.reverse().map(transaction => (
+          <styles.Transaction key={transaction.TxID}>
             <styles.TransactionDetails>
               <styles.TransactionPeerText>
-                {transaction.Name}
+                {transaction.TransactionType === 'debit' ? `To: ${transaction.Name}` : `From: ${transaction.Name}`}
               </styles.TransactionPeerText>
               <styles.TransactionPeerAccountText>
+               AccountID:
+                {' '}
                 {transaction.From || transaction.To}
               </styles.TransactionPeerAccountText>
-              <styles.TransactionIDText>{`TxID: ${transaction.ID}`}</styles.TransactionIDText>
+              <styles.TransactionIDText>{`TxID: ${transaction.TxID}`}</styles.TransactionIDText>
+              <styles.TransactionTimeText>{`${(new Date(transaction.CreatedAt)).toUTCString()}`}</styles.TransactionTimeText>
             </styles.TransactionDetails>
             <styles.TransactionAmount>
               <styles.TransactionAmountText type={transaction.TransactionType}>
                 {transaction.TransactionType === 'debit' ? '-' : '+'}
-                {' $'}
+                {props.credentials.BankInfo.NativeCurrency === 'INR' ? '₹' : '$'}
                 {transaction.Amount}
               </styles.TransactionAmountText>
             </styles.TransactionAmount>

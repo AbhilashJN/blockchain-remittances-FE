@@ -48,13 +48,18 @@ const PaymentsView = props => (
           <styles.ReceiverName>{props.receiverName}</styles.ReceiverName>
           <styles.ReceiverBankName>{props.receiverBankName}</styles.ReceiverBankName>
           <styles.ReceiverBankName>{props.receiverPhone}</styles.ReceiverBankName>
+          <styles.ReceiverBankName>{`Currency : ${props.receiverCurrency}`}</styles.ReceiverBankName>
+          <styles.ReceiverBankName>{`Exchange Rate : 1 ${props.senderCurrency} = ${props.exchangeRate} ${props.receiverCurrency}`}</styles.ReceiverBankName>
         </styles.ReceiverInfo>
       </styles.ReceiverInfoCard>
     )
     }
     <styles.Field>
       <styles.FieldName>Amount</styles.FieldName>
-      <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
+      <styles.FieldBody>
+        <styles.FieldCurrency>{props.senderCurrency}</styles.FieldCurrency>
+        <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
+      </styles.FieldBody>
     </styles.Field>
     <styles.Button onPress={props.makePayment} enabled={props.isReceiverVerified}>
       <styles.ButtonText>Confirm</styles.ButtonText>

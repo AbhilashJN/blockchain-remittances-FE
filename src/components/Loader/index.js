@@ -2,8 +2,8 @@ import React from 'react';
 import * as styles from './style';
 import loader from '../../assets/loader128px.gif';
 
-const Loader = () => (
-  <styles.Container>
+const Loader = props => (
+  <styles.Container theme={props.theme}>
     <styles.LoaderIcon source={loader} />
   </styles.Container>
 );

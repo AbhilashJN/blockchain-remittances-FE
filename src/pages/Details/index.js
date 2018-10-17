@@ -1,11 +1,15 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import DetailsView from '../../components/DetailsView';
 import * as utils from '../../utils/common';
 
 class Details extends React.Component {
-    static navigationOptions = {
+    static navigationOptions =({ navigation }) => ({
       title: 'Details',
-    };
+      headerStyle: {
+        backgroundColor: navigation.getParam('theme').headerBackground,
+      },
+    });
 
     state={
       credentials: {},
@@ -21,7 +25,7 @@ class Details extends React.Component {
     getTransactionDetails=() => {
       this.getCredentials()
         .then((creds) => {
-          fetch(`http://${creds.BankInfo.StellarAppURL.replace("localhost","10.0.2.2")}/accountDetails?BankAccountID=${creds.BankAccountID}`)       //eslint-disable-line
+          fetch(`http://${creds.BankInfo.StellarAppURL.replace("localhost",utils.localhostURL)}/accountDetails?BankAccountID=${creds.BankAccountID}`)       //eslint-disable-line
             .then(resp => resp.json())
             .then((data) => {
               this.setState({
@@ -34,10 +38,12 @@ class Details extends React.Component {
 
     render() {
       return (
-        <DetailsView
-          credentials={this.state.credentials}
-          accountDetails={this.state.accountDetails}
-        />
+        <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+          <DetailsView
+            credentials={this.state.credentials}
+            accountDetails={this.state.accountDetails}
+          />
+        </ThemeProvider>
       );
     }
 }

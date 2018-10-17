@@ -3,14 +3,15 @@ import * as styles from './style';
 
 const HomeView = props => (
   <styles.Container>
+    <styles.BankName>{props.bankName}</styles.BankName>
     <styles.Button onPress={props.goToPage('Payments')}>
       <styles.ButtonText>
-             Payment
+             Make a Payment
       </styles.ButtonText>
     </styles.Button>
     <styles.Button onPress={props.goToPage('Details')}>
       <styles.ButtonText>
-              Details
+              View Transaction Details
       </styles.ButtonText>
     </styles.Button>
     <styles.Button onPress={props.goToPage('WithdrawDeposit')}>
@@ -18,11 +19,11 @@ const HomeView = props => (
               Withdraw/Deposit
       </styles.ButtonText>
     </styles.Button>
-    <styles.Button onPress={props.goToPage('NewRecipient')}>
+    {/* <styles.Button onPress={props.goToPage('NewRecipient')}>
       <styles.ButtonText>
               New Recipient
       </styles.ButtonText>
-    </styles.Button>
+    </styles.Button> */}
   </styles.Container>
 );
 

@@ -1,27 +1,34 @@
 import React from 'react';
 import { StackActions, NavigationActions } from 'react-navigation';
+import { ThemeProvider } from 'styled-components';
 import PaymentsView from '../../components/PaymentsView';
 import Loader from '../../components/Loader';
 import * as utils from '../../utils/common';
 import contacts from './data';
 
 class Payments extends React.Component {
-    static navigationOptions = {
+    static navigationOptions = ({ navigation }) => ({
       title: 'Payments',
-    };
+      headerStyle: {
+        backgroundColor: navigation.getParam('theme').headerBackground,
+      },
+    });
 
     state={
       isReceiverVerified: false,
       receiverPhone: '',
       Amount: '',
-      senderBankAccountID: null,
-      senderName: null,
+      senderBankAccountID: '',
+      senderCurrency: '',
+      senderName: '',
       senderBankUrl: '',
-      receiverBankName: null,
-      receiverName: null,
-      receiverBankAccountID: null,
+      receiverBankName: '',
+      receiverName: '',
+      receiverBankAccountID: '',
+      receiverCurrency: '',
       loading: false,
       receiverMode: 'numpad',
+      exchangeRate: 80,
     }
 
     componentDidMount() {
@@ -53,8 +60,20 @@ class Payments extends React.Component {
             senderName: creds.Name,
             senderBankAccountID: creds.BankAccountID,
             senderBankUrl: creds.BankInfo.StellarAppURL,
+            senderCurrency: creds.BankInfo.NativeCurrency,
           });
         });
+    }
+
+    getExchangeRate=(senderCurrency, receiverCurrency) => {
+      if (senderCurrency === receiverCurrency) {
+        return 1;
+      }
+      if (senderCurrency === 'INR') {
+        return 1 / 80;
+      }
+
+      return 80;
     }
 
     verifyReceiver=() => {
@@ -62,14 +81,16 @@ class Payments extends React.Component {
         alert('Enter valid phone number and try again');                                      //eslint-disable-line
         return;
       }
-      fetch(`http://10.0.2.2:8080/getUserInfo?PhoneNumber=${this.state.receiverPhone}`)   //eslint-disable-line
+      fetch(`http://${utils.localhostURL}:8080/getUserInfo?PhoneNumber=${this.state.receiverPhone}`)   //eslint-disable-line
         .then(resp => resp.json()).then((data) => {
           this.setState({
             receiverName: data.Name,
             receiverBankName: data.BankName,
             receiverBankAccountID: data.BankAccountID,
             receiverBankStellarAddress: data.BankInfo.DistributorAddress,
+            receiverCurrency: data.BankInfo.NativeCurrency,
             isReceiverVerified: true,
+            exchangeRate: this.getExchangeRate(this.state.senderCurrency, data.BankInfo.NativeCurrency),        //eslint-disable-line
           });
         })
         .catch(() => {
@@ -103,33 +124,54 @@ class Payments extends React.Component {
         ReceiverBankAccountID: this.state.receiverBankAccountID,
         ReceiverBankStellarDistributorAddress: this.state.receiverBankStellarAddress,
       };
-      fetch(`http://${this.state.senderBankUrl.replace("localhost","10.0.2.2")}/sendPayment`, {                                       //eslint-disable-line
+      fetch(`http://${this.state.senderBankUrl.replace("localhost",utils.localhostURL)}/sendPayment`, {                                       //eslint-disable-line
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
         },
         body: utils.transformPOSTpayload(payload),
       }).then(response => response.text())
-        .then((responseText) => { this.clearStackAndGoToPage('OperationResult', { type: 'Payment', result: responseText }); });
+        .then((responseText) => {
+          let messages;
+          let result = '';
+          if (responseText === 'success') {
+            result = responseText;
+            messages = [`Amount debited from your account : ${this.state.senderCurrency} ${this.state.Amount}`,
+              `Amount credited to ${this.state.receiverName}'s account : ${this.state.receiverCurrency} ${this.state.exchangeRate * this.state.Amount}`];
+          } else {
+            result = `failed! ${responseText}`;
+          }
+          this.clearStackAndGoToPage('OperationResult', {
+            type: 'Payment',
+            result,
+            messages,
+            theme: this.props.navigation.getParam('theme'),
+          });
+        });
     }
 
     render() {
       return (
         this.state.loading
-          ? <Loader />
+          ? <Loader theme={this.props.navigation.getParam('theme')} />
           : (
-            <PaymentsView
-              makePayment={this.makePayment}
-              update={this.updateField}
-              verifyReceiver={this.verifyReceiver}
-              isReceiverVerified={this.state.isReceiverVerified}
-              receiverName={this.state.receiverName}
-              receiverBankName={this.state.receiverBankName}
-              receiverPhone={this.state.receiverPhone}
-              contacts={contacts}
-              receiverMode={this.state.receiverMode}
-              switchReceiverMode={this.switchReceiverMode}
-            />
+            <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+              <PaymentsView
+                makePayment={this.makePayment}
+                update={this.updateField}
+                verifyReceiver={this.verifyReceiver}
+                isReceiverVerified={this.state.isReceiverVerified}
+                receiverName={this.state.receiverName}
+                receiverBankName={this.state.receiverBankName}
+                receiverPhone={this.state.receiverPhone}
+                contacts={contacts}
+                receiverMode={this.state.receiverMode}
+                switchReceiverMode={this.switchReceiverMode}
+                exchangeRate={this.state.exchangeRate}
+                senderCurrency={this.state.senderCurrency}
+                receiverCurrency={this.state.receiverCurrency}
+              />
+            </ThemeProvider>
           )
       );
     }

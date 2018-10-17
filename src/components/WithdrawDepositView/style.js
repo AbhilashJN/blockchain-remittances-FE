@@ -4,6 +4,7 @@ import { Dimensions } from 'react-native';
 export const Container = styled.View`
 flex:1;
 padding:15px;
+background-color:${props => props.theme.cardBackground}
 `;
 
 export const Field = styled.View`
@@ -17,6 +18,18 @@ export const FieldName = styled.Text`
     font-weight:bold
 `;
 
+export const FieldBody = styled.View`
+flex-direction:row;
+justify-content:space-between;
+`;
+
+export const FieldCurrency = styled.Text`
+font-size:20px;
+color:white;
+font-weight:bold;
+margin-top:20px;
+`;
+
 export const FieldInput = styled.TextInput`
     border-left-width:0px;
     border-right-width:0px;
@@ -25,7 +38,9 @@ export const FieldInput = styled.TextInput`
     border-color: white;
     font-size:20px;
     color:white;
-    font-weight:bold`;
+    font-weight:bold;
+    width:${(Dimensions.get('window').width * 0.75)};
+    `;
 
 export const ActionRow = styled.View`
 flex-direction:row;
@@ -46,5 +61,5 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-    color: rgb(0, 122, 183);
+    color: ${props => props.theme.buttonText}
 `;

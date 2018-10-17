@@ -5,7 +5,10 @@ const WithdrawDepositView = props => (
   <styles.Container>
     <styles.Field>
       <styles.FieldName>Amount</styles.FieldName>
-      <styles.FieldInput keyboardType="number-pad" onChangeText={props.updateAmount} />
+      <styles.FieldBody>
+        <styles.FieldCurrency>{props.currency}</styles.FieldCurrency>
+        <styles.FieldInput keyboardType="number-pad" onChangeText={props.updateAmount} />
+      </styles.FieldBody>
     </styles.Field>
     <styles.ActionRow>
       <styles.Button onPress={props.doAction('Withdraw')}><styles.ButtonText>Withdraw</styles.ButtonText></styles.Button>

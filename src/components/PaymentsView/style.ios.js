@@ -6,6 +6,7 @@ export const Container = styled.View`
     justify-content:space-between;
     align-items:stretch;
     padding:20px;
+    background-color:${props => props.theme.cardBackground}
 `;
 
 export const Field = styled.View`
@@ -38,6 +39,13 @@ export const FieldIcon = styled.Image`
 
 `;
 
+export const FieldCurrency = styled.Text`
+font-size:20px;
+color:white;
+font-weight:bold;
+margin-top:25px;
+`;
+
 
 export const FieldInput = styled.TextInput`
     border-left-width:0px;
@@ -47,7 +55,8 @@ export const FieldInput = styled.TextInput`
     border-color: rgba(229, 229, 229, 0.6);
     font-size:20px;
     color:white;
-    margin-top:25px
+    margin-top:25px;
+    width:${(Dimensions.get('window').width * 0.7)};
 `;
 
 
@@ -64,8 +73,8 @@ font-size:15px;
 
 
 export const Button = styled.TouchableOpacity`
-    background-color: ${props => (props.enabled ? 'rgb(249, 251, 252)' : 'rgb(159, 197, 221)')};
-    width: ${(Dimensions.get('window').width * 0.6)};
+    background-color: ${props => (props.enabled ? 'rgb(249, 251, 252)' : props.theme.buttonDisabled)};
+    width: ${(Dimensions.get('window').width * 0.7)};
     padding:10px;
     border-radius:5px;
     margin-vertical:10px;
@@ -75,7 +84,8 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-    color: rgb(0, 122, 183);
+color: ${props => props.theme.buttonText};
+font-size:20px
 `;
 
 
@@ -104,11 +114,11 @@ export const ReceiverInfoText = styled.Text`
 `;
 
 export const ReceiverName = styled(ReceiverInfoText)`
-    font-size:20px
+    font-size:15px
 `;
 
 export const ReceiverBankName = styled(ReceiverInfoText)`
-    font-size:15px
+    font-size:10px
 `;
 
 

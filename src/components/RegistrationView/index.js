@@ -13,8 +13,8 @@ const RegistrationView = props => (
       <styles.FieldName>Bank Account Number</styles.FieldName>
       <styles.FieldInput onChangeText={props.update('BankAccountID')} defaultValue={props.BankAccountID} />
     </styles.Field>
-    <styles.Button>
-      <styles.ButtonText onPress={props.doRegistration}>Confirm</styles.ButtonText>
+    <styles.Button onPress={props.doRegistration}>
+      <styles.ButtonText>Confirm</styles.ButtonText>
     </styles.Button>
   </styles.Container>
 );
