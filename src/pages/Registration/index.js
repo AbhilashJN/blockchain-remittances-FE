@@ -54,7 +54,7 @@ class Registration extends React.Component {
           if (resp.status === 201) {
             return resp.json();
           }
-          alert(resp.status);                                                     //eslint-disable-line
+          alert(resp.status);                                                    //eslint-disable-line
           throw new Error('Registration failed');
         }).then((respJson) => { utils.storeData('credentials', { ...respJson }); })
           .then(() => {
@@ -64,12 +64,12 @@ class Registration extends React.Component {
                 result: 'success',
                 resultText: 'Registration Successful!',
               },
-            })                                                 //eslint-disable-line
+            });
           })
-          .catch((err) => {
-            alert(err);
+          .catch(() => {
+            alert('Registration failed! Please try again');                 //eslint-disable-line
             this.setState({ loading: false });
-           });                                       //eslint-disable-line
+          });
       }
 
       render() {
