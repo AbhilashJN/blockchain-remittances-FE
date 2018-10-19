@@ -1,6 +1,7 @@
 export const themeA = {
-  cardBackground: 'rgb(0, 122, 183)',
-  headerBackground: 'rgb(0, 68, 102)',
+  cardBackground: 'rgb(255, 255, 255)',
+  headerBackground: 'rgb(24, 84, 142)',
+  headerText: 'rgb(255,255,255)',
   pickerBackground: 'rgb(0, 68, 102)',
   dropdownItemColor: 'rgb(71, 194, 255)',
   buttonText: 'rgb(0, 122, 183)',

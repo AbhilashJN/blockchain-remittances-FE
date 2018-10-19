@@ -11,7 +11,7 @@ export const Container = styled.View`
 
 
 export const PageInfo = styled.View`
-    paddingHorizontal:${Dimensions.get('screen').width * 0.1};
+    padding-horizontal:${Dimensions.get('screen').width * 0.1};
     align-items:center;
 `;
 

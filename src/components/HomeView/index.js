@@ -4,7 +4,19 @@ import * as styles from './style';
 const HomeView = props => (
   <styles.Container>
     <styles.BankName>{props.bankName}</styles.BankName>
-    <styles.Button onPress={props.goToPage('Payments')}>
+    <styles.MenuOption onPress={props.goToPage('Payments')}>
+      <styles.MenuOptionIcon />
+      <styles.MenuOptionName>Make Payment</styles.MenuOptionName>
+    </styles.MenuOption>
+    <styles.MenuOption onPress={props.goToPage('Details')}>
+      <styles.MenuOptionIcon />
+      <styles.MenuOptionName>Details</styles.MenuOptionName>
+    </styles.MenuOption>
+    <styles.MenuOption onPress={props.goToPage('WithdrawDeposit')}>
+      <styles.MenuOptionIcon />
+      <styles.MenuOptionName>New Recipient</styles.MenuOptionName>
+    </styles.MenuOption>
+    {/* <styles.Button onPress={props.goToPage('Payments')}>
       <styles.ButtonText>
              Make a Payment
       </styles.ButtonText>
@@ -18,7 +30,7 @@ const HomeView = props => (
       <styles.ButtonText>
               Withdraw/Deposit
       </styles.ButtonText>
-    </styles.Button>
+    </styles.Button> */}
     {/* <styles.Button onPress={props.goToPage('NewRecipient')}>
       <styles.ButtonText>
               New Recipient
