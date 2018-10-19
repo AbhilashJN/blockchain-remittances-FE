@@ -50,12 +50,11 @@ const RegistrationPage = createStackNavigator({
 },
 {
   initialRouteName: 'Registration',
-  cardStyle: { backgroundColor: 'rgb(0, 122, 183);' },
   navigationOptions: {
     headerStyle: {
-      backgroundColor: 'rgb(0, 68, 102)',
+      backgroundColor: 'rgb(24, 84, 142)',
     },
-    headerTintColor: '#e6f0f7',
+    headerTintColor: 'rgb(255,255,255)',
     headerTitleStyle: {
       fontWeight: 'bold',
     },
