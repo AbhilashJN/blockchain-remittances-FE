@@ -52,7 +52,7 @@ padding-vertical:10px
 
 
 export const Button = styled.TouchableOpacity`
-background-color: ${props => props.theme.buttonEnabled};
+    background-color: ${props => props.theme.buttonEnabled};
     width: ${(Dimensions.get('window').width * 0.3)};
     padding-vertical:15px;
     border-radius:5px;

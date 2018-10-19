@@ -35,9 +35,9 @@ export const FieldName = styled.Text`
 
 
 export const FieldBody = styled.View`
-flex-direction:row;
-justify-content:space-between;
-align-items:center;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
 `;
 
 export const FieldIcon = styled.Image`
@@ -45,33 +45,33 @@ export const FieldIcon = styled.Image`
 `;
 
 export const FieldCurrency = styled.Text`
-font-size:20px;
-color:rgb(80,80,80);
-font-weight:bold;
-flex:1
+    font-size:20px;
+    color:rgb(80,80,80);
+    font-weight:bold;
+    flex:1
 `;
 
 export const FieldInput = styled.TextInput`
-border-left-width:0px;
-border-right-width:0px;
-border-top-width:0px;
-border-bottom-width:1px;
-border-color: rgb(239,239,239);
-font-size:20px;
-color:rgb(50,50,50);
-flex:3
+    border-left-width:0px;
+    border-right-width:0px;
+    border-top-width:0px;
+    border-bottom-width:1px;
+    border-color: rgb(239,239,239);
+    font-size:20px;
+    color:rgb(50,50,50);
+    flex:3
 `;
 
 
 export const Banner = styled.View`
-background-color:#00a3f5;
-border-radius:5px;
-padding:5px;
+    background-color:#00a3f5;
+    border-radius:5px;
+    padding:5px;
 `;
 
 export const BannerText = styled.Text`
-color: white;
-font-size:15px;
+    color: white;
+    font-size:15px;
 `;
 
 
