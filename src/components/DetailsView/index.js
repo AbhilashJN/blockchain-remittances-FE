@@ -9,7 +9,7 @@ class DetailsView extends React.PureComponent {
           <styles.HeaderText>My Account</styles.HeaderText>
           <styles.AccountInfo>
             <styles.AccountDetails>
-              <styles.UserName>{this.props.credentials.Name}</styles.UserName>
+              <styles.BankAccountDetailsTextLarge>{this.props.credentials.Name}</styles.BankAccountDetailsTextLarge>
               <styles.BankAccountDetailsText>
                 {this.props.credentials.BankName}
               </styles.BankAccountDetailsText>
@@ -19,7 +19,7 @@ class DetailsView extends React.PureComponent {
             </styles.AccountDetails>
             {this.props.accountDetails && (
               <styles.Balance>
-                <styles.BankAccountDetailsText>Balance:</styles.BankAccountDetailsText>
+                <styles.BankAccountDetailsTextLarge>Available Balance</styles.BankAccountDetailsTextLarge>
                 <styles.BalanceAmountText>{`${this.props.credentials.BankInfo.NativeCurrency === 'INR' ? '₹' : '$'} ${this.props.accountDetails.Balance}`}</styles.BalanceAmountText>
               </styles.Balance>
             )}
@@ -31,15 +31,10 @@ class DetailsView extends React.PureComponent {
               <styles.Transaction key={transaction.TxID}>
                 <styles.TransactionDetails>
                   <styles.TransactionPeerText>
-                    {transaction.TransactionType === 'debit' ? `To: ${transaction.Name}` : `From: ${transaction.Name}`}
+                    {transaction.Name}
                   </styles.TransactionPeerText>
-                  <styles.TransactionPeerAccountText>
-                   AccountID:
-                    {' '}
-                    {transaction.From || transaction.To}
-                  </styles.TransactionPeerAccountText>
-                  <styles.TransactionIDText>{`TxID: ${transaction.TxID}`}</styles.TransactionIDText>
                   <styles.TransactionTimeText>{`${(new Date(transaction.CreatedAt)).toUTCString()}`}</styles.TransactionTimeText>
+                  <styles.TransactionIDText>{`TXN ID: ${transaction.TxID}`}</styles.TransactionIDText>
                 </styles.TransactionDetails>
                 <styles.TransactionAmount>
                   <styles.TransactionAmountText type={transaction.TransactionType}>

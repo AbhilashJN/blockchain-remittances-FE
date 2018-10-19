@@ -3,22 +3,22 @@ import styled from 'styled-components';
 export const Container = styled.View`
     flex:1;
     justify-content:flex-start;
-    background-color:${props => props.theme.cardBackground}
+    background-color:${props => props.theme.cardBackground};
 `;
 
 export const DetailsHead = styled.View`
     padding-vertical:10px;
-    padding-horizontal:15px;
+    padding-horizontal:20px;
     background-color:${props => props.theme.detailsHeadBg};
-    border-radius:5px;
 `;
 
 
 export const HeaderText = styled.Text`
     text-align:center;
     color:rgb(255,255,255);
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     font-size:20px;
+    font-weight:bold;
 `;
 
 export const AccountInfo = styled.View`
@@ -31,16 +31,15 @@ export const AccountDetails = styled.View`
 `;
 
 export const Balance = styled.View`
-
+    align-items:flex-end;
 `;
 
 export const DetailsText = styled.Text`
     color:white;
-    font-weight:bold;
 `;
 
 
-export const UserName = styled(DetailsText)`
+export const BankAccountDetailsTextLarge = styled(DetailsText)`
     font-size:20px
 `;
 
@@ -49,7 +48,8 @@ export const BankAccountDetailsText = styled(DetailsText)`
 `;
 
 export const BalanceAmountText = styled(DetailsText)`
-    font-size:30px
+    font-size:30px;
+    font-weight:bold;
 `;
 
 export const TransactionHistoryText = styled.Text`
@@ -58,17 +58,16 @@ export const TransactionHistoryText = styled.Text`
 `;
 
 export const TransactionsList = styled.ScrollView`
-
+padding-horizontal:20px;
 `;
 
 export const Transaction = styled.View`
-    margin-top:15px;
     background-color:white;
-    border-radius:5px;
-    padding:10px;
-    elevation:3px;
+    padding-vertical:20px;
     flex-direction:row;
     justify-content:space-between;
+    border-bottom-width:1.5px;
+    border-color:rgb(239,239,239);
 `;
 
 export const TransactionDetails = styled.View`
@@ -80,33 +79,27 @@ export const TransactionAmount = styled.View`
 `;
 
 export const TransactionPeerText = styled.Text`
-    font-size:20px;
+    font-size:23px;
     margin:2px;
-    color:black;
-    font-weight:bold;
-`;
-
-export const TransactionPeerAccountText = styled(TransactionPeerText)`
-    font-size:15px;
+    color:rgb(50,50,50);
 `;
 
 export const TransactionIDText = styled.Text`
     font-size:15px;
-    margin:2px;
-    color:black;
+    margin-top:10px;
+    color:rgb(50,50,50);
 `;
 
 
 export const TransactionTimeText = styled.Text`
     font-size:15px;
     margin:2px;
-    color:black;
-    font-weight:bold;
+    color:rgb(150,150,150);
 `;
 
 export const TransactionAmountText = styled.Text`
-    color:${props => (props.type === 'debit' ? 'rgb(150, 21, 21)' : 'rgb(22, 150, 65)')};
-    font-size: 20px;
+    color:${props => (props.type === 'debit' ? 'rgb(208, 2, 27)' : 'rgb(65, 117, 5)')};
+    font-size: 25px;
     font-weight: bold;
     align-self:flex-end;
 `;

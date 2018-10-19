@@ -18,7 +18,7 @@ export const PageInfo = styled.View`
 export const PageIcon = styled.Image``;
 
 export const PageInfoText = styled.Text`
-    color:rgb(80,80,80);
+    color:rgb(50,50,50);
     font-size: 15px;
     text-align:center;
 `;
@@ -40,7 +40,7 @@ export const FieldInput = styled.TextInput`
     border-bottom-width:1px;
     border-color: rgb(239,239,239);
     font-size:20px;
-    color:rgb(80,80,80);
+    color:rgb(50,50,50);
 `;
 
 
@@ -62,7 +62,7 @@ export const ButtonText = styled.Text`
 
 export const DropdownStyles = {
   baseColor: 'rgb(172,172,172)',
-  textColor: 'rgb(80,80,80)',
+  textColor: 'rgb(50,50,50)',
   itemColor: 'rgb(71, 194, 255)',
   selectedItemColor: 'white',
   itemTextStyle: {

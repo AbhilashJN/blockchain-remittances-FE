@@ -26,7 +26,9 @@ const HomeView = props => (
     >
       {props.loading ? (
         <styles.BottomTabPlaceholder theme={props.theme}>
-          <styles.BottomTabPlaceholderText>Loading Account Details...</styles.BottomTabPlaceholderText>
+          <styles.BottomTabPlaceholderText>
+            Loading Account Details...
+          </styles.BottomTabPlaceholderText>
           <Loader theme={props.theme} />
         </styles.BottomTabPlaceholder>
       )

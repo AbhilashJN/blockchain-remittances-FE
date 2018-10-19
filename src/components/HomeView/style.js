@@ -4,7 +4,7 @@ import { Dimensions } from 'react-native';
 export const Container = styled.View`
     flex:1;
     align-items:stretch;
-    justify-content:center;
+    justify-content:flex-start;
     background-color:${props => props.theme.cardBackground};
     padding-horizontal: 25px
 `;
@@ -46,7 +46,7 @@ export const MenuOption = styled.TouchableOpacity`
 export const MenuOptionIcon = styled.Image``;
 
 export const MenuOptionName = styled.Text`
-    color:rgb(80,80,80);
+    color:rgb(50,50,50);
     font-size:20px;
 `;
 

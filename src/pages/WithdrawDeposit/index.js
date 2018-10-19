@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { StackActions } from 'react-navigation';
 import { ThemeProvider } from 'styled-components';
 import WithdrawDepositView from '../../components/WithdrawDepositView';
 import Loader from '../../components/Loader';
@@ -38,11 +38,11 @@ class WithdrawDeposit extends React.Component {
 
 
     doAction=actionType => () => {
-      this.setState({ loading: true });
       if (this.state.Amount === '') {
         alert('Enter valid amount');                    //eslint-disable-line
         return;
       }
+      this.setState({ loading: true });
       const payload = {
         Amount: this.state.Amount,
         AccountID: this.state.credentials.BankAccountID,

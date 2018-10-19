@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { StackActions } from 'react-navigation';
 import { ThemeProvider } from 'styled-components';
 import PaymentsView from '../../components/PaymentsView';
 import Loader from '../../components/Loader';
