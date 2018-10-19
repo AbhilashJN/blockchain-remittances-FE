@@ -46,12 +46,10 @@ export const FieldInput = styled.TextInput`
 
 export const Button = styled.TouchableOpacity`
     background-color: 'rgb(225, 27, 34)';
-    width: ${(Dimensions.get('window').width * 0.85)};
     paddingVertical:15px;
     border-radius:5px;
     margin-vertical:10px;
     align-items:center;
-    align-self:center;
 `;
 
 export const ButtonText = styled.Text`

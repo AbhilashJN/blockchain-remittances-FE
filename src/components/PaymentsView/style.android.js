@@ -9,30 +9,35 @@ export const Container = styled.View`
     background-color:${props => props.theme.cardBackground}
 `;
 
+export const PageInfo = styled.View`
+    padding-horizontal:${Dimensions.get('screen').width * 0.1};
+    align-items:center;
+`;
+
+export const PageIcon = styled.Image``;
+
+export const PageInfoText = styled.Text`
+    color:rgb(50,50,50);
+    font-size: 15px;
+    text-align:center;
+`;
+
 export const Field = styled.View`
     justify-content:flex-start
 `;
 
 
-export const TextBase = styled.Text`
-font-size:15px;
-color:white;
-font-weight:bold
-`;
-
-export const FieldName = styled(TextBase)`
+export const FieldName = styled.Text`
     text-align:left;
-`;
-
-export const CenteredText = styled(TextBase)`
-    text-align:center;
-    font-size:20px;
+    font-size:15px;
+    color:rgb(172,172,172);
 `;
 
 
 export const FieldBody = styled.View`
 flex-direction:row;
 justify-content:space-between;
+align-items:center;
 `;
 
 export const FieldIcon = styled.Image`
@@ -41,21 +46,20 @@ export const FieldIcon = styled.Image`
 
 export const FieldCurrency = styled.Text`
 font-size:20px;
-color:white;
+color:rgb(80,80,80);
 font-weight:bold;
-margin-top:35px;
+flex:1
 `;
 
 export const FieldInput = styled.TextInput`
-    border-left-width:0px;
-    border-right-width:0px;
-    border-top-width:0px;
-    border-bottom-width:0.5px;
-    border-color: rgba(229, 229, 229, 0.6);
-    font-size:20px;
-    color:white;
-    margin-top:25px;
-    width:${(Dimensions.get('window').width * 0.75)};
+border-left-width:0px;
+border-right-width:0px;
+border-top-width:0px;
+border-bottom-width:1px;
+border-color: rgb(239,239,239);
+font-size:20px;
+color:rgb(50,50,50);
+flex:3
 `;
 
 
@@ -72,52 +76,43 @@ font-size:15px;
 
 
 export const Button = styled.TouchableOpacity`
-    background-color: ${props => (props.enabled ? 'rgb(249, 251, 252)' : props.theme.buttonDisabled)};
-    width: ${(Dimensions.get('window').width * 0.7)};
-    padding:10px;
+    background-color: ${props => (props.enabled ? props.theme.buttonEnabled : props.theme.buttonDisabled)};
+    paddingVertical:15px;
     border-radius:5px;
     margin-vertical:10px;
     align-items:center;
-    align-self:center;
-    elevation:3px
 `;
 
 export const ButtonText = styled.Text`
-    color: ${props => props.theme.buttonText};
-    font-size:20px;
+    color: rgb(255,255,255);
+    font-size:20px
 `;
 
 
 export const ReceiverInfoCard = styled.View`
-    elevation:2px;
-    border-radius:5px;
+    background-color:rgb(219, 228, 238);    
     margin:5px;
-    padding:10px;
-    background-color:white;
-    flex-direction:row;
+    padding:20px;
+    border-radius:5px;
+    border-color:rgb(160, 184, 209);
+    border-width:1px;
 `;
 
-
-export const UserVerifiedIcon = styled.Image`
+export const ReceiverName = styled.Text`
+    font-size:20px;
+    color:rgb(50,50,50);
 `;
 
-export const ReceiverInfo = styled.View`
-align-items: flex-start;
-margin-left: 20px;
+export const ReceiverBankName = styled.Text`
+    font-size:15px;
+    color:rgb(50,50,50);
 `;
 
-
-export const ReceiverInfoText = styled.Text`
+export const ReceiverBankAccount = styled.Text`
+    font-size:18px;
     font-weight:bold;
-    color: black
-`;
-
-export const ReceiverName = styled(ReceiverInfoText)`
-    font-size:20px
-`;
-
-export const ReceiverBankName = styled(ReceiverInfoText)`
-    font-size:15px
+    color:rgb(50,50,50);
+    margin-top:20px;
 `;
 
 
@@ -145,4 +140,12 @@ export const FieldButton = styled.TouchableOpacity`
     margin-top:25px;
     justify-content:center;
     align-items:center;
+`;
+
+
+export const ConversionRate = styled.Text`
+    font-size:15px;
+    color: rgb(50,50,50);
+    text-align:right;
+    margin:5px;
 `;

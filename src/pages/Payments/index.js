@@ -9,10 +9,11 @@ import OperationResultView from '../../components/OperationResultView';
 
 class Payments extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-      title: 'Payments',
+      title: 'Make Payment',
       headerStyle: {
         backgroundColor: navigation.getParam('theme').headerBackground,
       },
+      headerTintColor: navigation.getParam('theme').headerText,
     });
 
     state={
@@ -179,6 +180,7 @@ class Payments extends React.Component {
             isReceiverVerified={this.state.isReceiverVerified}
             receiverName={this.state.receiverName}
             receiverBankName={this.state.receiverBankName}
+            receiverBankAccountID={this.state.receiverBankAccountID}
             receiverPhone={this.state.receiverPhone}
             contacts={contacts}
             receiverMode={this.state.receiverMode}

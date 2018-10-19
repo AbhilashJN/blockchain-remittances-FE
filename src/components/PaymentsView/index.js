@@ -7,19 +7,21 @@ import numpadIcon from '../../assets/numpad.png';
 
 const PaymentsView = props => (
   <styles.Container>
+    <styles.PageInfo>
+      <styles.PageIcon />
+      <styles.PageInfoText>
+      Please help us with bank details of your recipient
+      which are required to help you make transactions.
+      </styles.PageInfoText>
+    </styles.PageInfo>
     <styles.Field>
-      <styles.FieldName>To</styles.FieldName>
+      <styles.FieldName>Recipient Phone number</styles.FieldName>
       {props.receiverMode === 'numpad' ? (
         <styles.FieldBody>
           <styles.FieldInput
             onChangeText={props.update('receiverPhone')}
             keyboardType="phone-pad"
-            placeholder={"Enter receipient's phone number"}
-            placeholderTextColor="rgba(229, 229, 229, 0.6)"
           />
-          <styles.FieldButton onPress={props.switchReceiverMode('contacts')}>
-            <styles.FieldIcon source={contactsIcon} />
-          </styles.FieldButton>
         </styles.FieldBody>
       )
         : (
@@ -42,27 +44,24 @@ const PaymentsView = props => (
       <styles.ButtonText>Verify</styles.ButtonText>
     </styles.Button>
     { props.isReceiverVerified && (
-      <styles.ReceiverInfoCard>
-        <styles.UserVerifiedIcon source={userVerifiedIcon} />
-        <styles.ReceiverInfo>
+      <>
+        <styles.ReceiverInfoCard>
           <styles.ReceiverName>{props.receiverName}</styles.ReceiverName>
           <styles.ReceiverBankName>{props.receiverBankName}</styles.ReceiverBankName>
-          <styles.ReceiverBankName>{props.receiverPhone}</styles.ReceiverBankName>
-          <styles.ReceiverBankName>{`Currency : ${props.receiverCurrency}`}</styles.ReceiverBankName>
-          <styles.ReceiverBankName>{`Exchange Rate : 1 ${props.senderCurrency} = ${props.exchangeRate} ${props.receiverCurrency}`}</styles.ReceiverBankName>
-        </styles.ReceiverInfo>
-      </styles.ReceiverInfoCard>
-    )
-    }
-    <styles.Field>
-      <styles.FieldName>Amount</styles.FieldName>
-      <styles.FieldBody>
-        <styles.FieldCurrency>{props.senderCurrency}</styles.FieldCurrency>
-        <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
-      </styles.FieldBody>
-    </styles.Field>
+          <styles.ReceiverBankAccount>{props.receiverBankAccountID}</styles.ReceiverBankAccount>
+        </styles.ReceiverInfoCard>
+        <styles.Field>
+          <styles.FieldName>Amount</styles.FieldName>
+          <styles.FieldBody>
+            <styles.FieldCurrency>{props.senderCurrency}</styles.FieldCurrency>
+            <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
+          </styles.FieldBody>
+          <styles.ConversionRate>{`Conv Rate : 1 ${props.senderCurrency} = ${props.exchangeRate} ${props.receiverCurrency}`}</styles.ConversionRate>
+        </styles.Field>
+    </>
+    )}
     <styles.Button onPress={props.makePayment} enabled={props.isReceiverVerified}>
-      <styles.ButtonText>Confirm</styles.ButtonText>
+      <styles.ButtonText>Make Payment</styles.ButtonText>
     </styles.Button>
   </styles.Container>
 );

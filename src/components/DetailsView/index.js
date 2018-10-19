@@ -9,7 +9,9 @@ class DetailsView extends React.PureComponent {
           <styles.HeaderText>My Account</styles.HeaderText>
           <styles.AccountInfo>
             <styles.AccountDetails>
-              <styles.BankAccountDetailsTextLarge>{this.props.credentials.Name}</styles.BankAccountDetailsTextLarge>
+              <styles.BankAccountDetailsTextLarge>
+                {this.props.credentials.Name}
+              </styles.BankAccountDetailsTextLarge>
               <styles.BankAccountDetailsText>
                 {this.props.credentials.BankName}
               </styles.BankAccountDetailsText>
@@ -19,7 +21,9 @@ class DetailsView extends React.PureComponent {
             </styles.AccountDetails>
             {this.props.accountDetails && (
               <styles.Balance>
-                <styles.BankAccountDetailsTextLarge>Available Balance</styles.BankAccountDetailsTextLarge>
+                <styles.BankAccountDetailsTextLarge>
+                  Available Balance
+                </styles.BankAccountDetailsTextLarge>
                 <styles.BalanceAmountText>{`${this.props.credentials.BankInfo.NativeCurrency === 'INR' ? '₹' : '$'} ${this.props.accountDetails.Balance}`}</styles.BalanceAmountText>
               </styles.Balance>
             )}

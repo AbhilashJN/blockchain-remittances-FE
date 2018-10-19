@@ -4,10 +4,12 @@ export const themeA = {
   headerText: 'rgb(255,255,255)',
   pickerBackground: 'rgb(0, 68, 102)',
   dropdownItemColor: 'rgb(71, 194, 255)',
-  buttonText: 'rgb(0, 122, 183)',
+  buttonEnabledText: 'color: rgb(255,255,255)',
+  buttonDisabledText: 'color: rgb(255,255,255)',
   messageBackground: 'rgb(0, 68, 102)',
-  detailsHeadBg: 'rgb(0, 163, 245)',
-  buttonDisabled: 'rgb(159, 197, 221)',
+  detailsHeadBg: 'rgb(24, 84, 142)',
+  buttonEnabled: 'rgb(225, 27, 34)',
+  buttonDisabled: 'rgb(239, 128, 132)',
 };
 
 
