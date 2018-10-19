@@ -49,3 +49,24 @@ export const MenuOptionName = styled.Text`
     color:rgb(80,80,80);
     font-size:20px;
 `;
+
+
+export const SlideUpPanelStyles = {
+  visible: true,
+  startCollapsed: true,
+  showBackdrop: false,
+  draggableRange: { top: Dimensions.get('window').height, bottom: 120 },
+};
+
+
+export const BottomTabPlaceholder = styled.View`
+   background-color:${props => props.theme.detailsHeadBg};
+   padding-vertical:10px;
+`;
+
+export const BottomTabPlaceholderText = styled.Text`
+text-align:center;
+color:rgb(255,255,255);
+margin-bottom: 100px;
+font-size:20px;
+`;

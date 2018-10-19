@@ -45,17 +45,9 @@ class Payments extends React.Component {
       this.setState({ receiverMode: mode });
     }
 
-    clearStackAndGoToPage=(pageName, pageParams) => () => {
-      const resetAction = StackActions.reset({
-        index: 0,
-        actions: [
-          NavigationActions.navigate({
-            routeName: pageName,
-            params: { ...pageParams, BankName: this.state.senderBankName },
-          }),
-        ],
-      });
-      this.props.navigation.dispatch(resetAction);
+    goToHomePage=() => {
+      const popAction = StackActions.pop();
+      this.props.navigation.dispatch(popAction);
     }
 
     getCredentials=() => {
@@ -63,7 +55,6 @@ class Payments extends React.Component {
         .then(JSON.parse).then((creds) => {
           this.setState({
             senderName: creds.Name,
-            senderBankName: creds.BankName,
             senderBankAccountID: creds.BankAccountID,
             senderBankUrl: creds.BankInfo.StellarAppURL,
             senderCurrency: creds.BankInfo.NativeCurrency,
@@ -174,7 +165,7 @@ class Payments extends React.Component {
           <ThemeProvider theme={this.props.navigation.getParam('theme')}>
             <OperationResultView
               {...this.state.operationResult}
-              goToPage={this.clearStackAndGoToPage('Home', { theme: this.props.navigation.getParam('theme') })}
+              goToPage={this.goToHomePage}
             />
           </ThemeProvider>
         );

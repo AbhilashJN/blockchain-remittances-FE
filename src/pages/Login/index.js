@@ -17,7 +17,7 @@ class Login extends React.Component {
       .then(resp => JSON.parse(resp))
       .then((data) => {
         if (data !== null) {
-          this.props.navigation.navigate('Home', { BankName: data.BankName, theme: data.BankName === 'ALPHA' ? themeA : themeB });
+          this.props.navigation.navigate('Home', { userCredentials: data, theme: data.BankName === 'ALPHA' ? themeA : themeB });
         } else {
           this.props.navigation.navigate('RegistrationPage');
         }

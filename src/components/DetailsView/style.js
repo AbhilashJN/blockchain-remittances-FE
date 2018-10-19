@@ -3,19 +3,27 @@ import styled from 'styled-components';
 export const Container = styled.View`
     flex:1;
     justify-content:flex-start;
-    padding-horizontal:5px;
     background-color:${props => props.theme.cardBackground}
 `;
 
-
 export const DetailsHead = styled.View`
-flex-direction:row;
-justify-content:space-between;
-padding-vertical:10px;
-padding-horizontal:15px;
-background-color:${props => props.theme.detailsHeadBg};
-border-radius:5px;
-margin-vertical:10px;
+    padding-vertical:10px;
+    padding-horizontal:15px;
+    background-color:${props => props.theme.detailsHeadBg};
+    border-radius:5px;
+`;
+
+
+export const HeaderText = styled.Text`
+    text-align:center;
+    color:rgb(255,255,255);
+    margin-bottom: 100px;
+    font-size:20px;
+`;
+
+export const AccountInfo = styled.View`
+    flex-direction:row;
+    justify-content:space-between;
 `;
 
 export const AccountDetails = styled.View`
@@ -27,25 +35,25 @@ export const Balance = styled.View`
 `;
 
 export const DetailsText = styled.Text`
-color:white;
-font-weight:bold;
+    color:white;
+    font-weight:bold;
 `;
 
 
 export const UserName = styled(DetailsText)`
-font-size:20px
+    font-size:20px
 `;
 
 export const BankAccountDetailsText = styled(DetailsText)`
-font-size:15px
+    font-size:15px
 `;
 
 export const BalanceAmountText = styled(DetailsText)`
-font-size:30px
+    font-size:30px
 `;
 
 export const TransactionHistoryText = styled.Text`
-    color:white;
+    color:black;
     font-size:15px;
 `;
 

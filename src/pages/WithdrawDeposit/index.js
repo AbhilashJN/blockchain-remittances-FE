@@ -25,17 +25,9 @@ class WithdrawDeposit extends React.Component {
       this.getAccountID();
     }
 
-    clearStackAndGoToPage=(pageName, pageParams) => () => {
-      const resetAction = StackActions.reset({
-        index: 0,
-        actions: [
-          NavigationActions.navigate({
-            routeName: pageName,
-            params: { ...pageParams, BankName: this.state.credentials.BankName },
-          }),
-        ],
-      });
-      this.props.navigation.dispatch(resetAction);
+    goToHomePage=() => {
+      const popAction = StackActions.pop();
+      this.props.navigation.dispatch(popAction);
     }
 
     getAccountID=() => utils.retrieveData('credentials').then(JSON.parse).then((creds) => { this.setState({ credentials: creds }); })
@@ -98,7 +90,7 @@ class WithdrawDeposit extends React.Component {
           <ThemeProvider theme={this.props.navigation.getParam('theme')}>
             <OperationResultView
               {...this.state.operationResult}
-              goToPage={this.clearStackAndGoToPage('Home', { theme: this.props.navigation.getParam('theme') })}
+              goToPage={this.goToHomePage}
             />
           </ThemeProvider>
         );

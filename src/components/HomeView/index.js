@@ -1,9 +1,12 @@
 import React from 'react';
+import SlideUpPanel from 'rn-sliding-up-panel';
+import AccountDetailsView from '../DetailsView';
+import Loader from '../Loader';
 import * as styles from './style';
 
 const HomeView = props => (
   <styles.Container>
-    <styles.BankName>{props.bankName}</styles.BankName>
+    <styles.BankName>{props.userCredentials.BankName}</styles.BankName>
     <styles.MenuOption onPress={props.goToPage('Payments')}>
       <styles.MenuOptionIcon />
       <styles.MenuOptionName>Make Payment</styles.MenuOptionName>
@@ -16,6 +19,24 @@ const HomeView = props => (
       <styles.MenuOptionIcon />
       <styles.MenuOptionName>New Recipient</styles.MenuOptionName>
     </styles.MenuOption>
+    <SlideUpPanel
+      {...styles.SlideUpPanelStyles}
+      onDrag={props.togglePageHeader}
+      onDragStart={props.refreshAccountDetails}
+    >
+      {props.loading ? (
+        <styles.BottomTabPlaceholder theme={props.theme}>
+          <styles.BottomTabPlaceholderText>Loading Account Details...</styles.BottomTabPlaceholderText>
+          <Loader theme={props.theme} />
+        </styles.BottomTabPlaceholder>
+      )
+        : (
+          <AccountDetailsView
+            credentials={props.userCredentials}
+            accountDetails={props.accountDetails}
+          />
+        )}
+    </SlideUpPanel>
     {/* <styles.Button onPress={props.goToPage('Payments')}>
       <styles.ButtonText>
              Make a Payment

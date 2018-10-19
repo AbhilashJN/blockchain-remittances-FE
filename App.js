@@ -69,6 +69,17 @@ const StackSwitch = createSwitchNavigator({
   initialRouteName: 'AuthLoad',
 });
 
-const App = () => <StackSwitch />;
+// const App = () => <StackSwitch />;
+
+// export default App;
+
+
+class App extends React.Component {
+  render() {
+    return (
+      <StackSwitch />
+    );
+  }
+}
 
 export default App;
