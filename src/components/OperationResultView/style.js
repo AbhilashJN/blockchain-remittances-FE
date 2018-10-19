@@ -42,7 +42,7 @@ export const Message = styled.View`
     border-radius:5px;
     elevation:-3;
     padding:10px;
-    marginVertical:25px
+    margin-vertical:25px
 `;
 
 

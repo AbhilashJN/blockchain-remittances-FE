@@ -77,14 +77,14 @@ font-size:15px;
 
 export const Button = styled.TouchableOpacity`
     background-color: ${props => (props.enabled ? props.theme.buttonEnabled : props.theme.buttonDisabled)};
-    paddingVertical:15px;
+    padding-vertical:15px;
     border-radius:5px;
     margin-vertical:10px;
     align-items:center;
 `;
 
 export const ButtonText = styled.Text`
-    color: rgb(255,255,255);
+    color: ${props => (props.enabled ? props.theme.buttonEnabledText : props.theme.buttonDisabledText)};
     font-size:20px
 `;
 

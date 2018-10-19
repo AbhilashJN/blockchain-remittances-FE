@@ -46,7 +46,7 @@ export const FieldInput = styled.TextInput`
 
 export const Button = styled.TouchableOpacity`
     background-color: 'rgb(225, 27, 34)';
-    paddingVertical:15px;
+    padding-vertical:15px;
     border-radius:5px;
     margin-vertical:10px;
     align-items:center;

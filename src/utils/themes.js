@@ -4,12 +4,12 @@ export const themeA = {
   headerText: 'rgb(255,255,255)',
   pickerBackground: 'rgb(0, 68, 102)',
   dropdownItemColor: 'rgb(71, 194, 255)',
-  buttonEnabledText: 'color: rgb(255,255,255)',
-  buttonDisabledText: 'color: rgb(255,255,255)',
   messageBackground: 'rgb(0, 68, 102)',
   detailsHeadBg: 'rgb(24, 84, 142)',
   buttonEnabled: 'rgb(225, 27, 34)',
   buttonDisabled: 'rgb(239, 128, 132)',
+  buttonEnabledText: 'rgb(255,255,255)',
+  buttonDisabledText: 'rgb(255,255,255)',
 };
 
 
@@ -22,4 +22,6 @@ export const themeB = {
   messageBackground: 'rgb(18, 102, 0)',
   detailsHeadBg: 'rgb(69, 211, 8)',
   buttonDisabled: 'rgb(172, 221, 159)',
+  buttonEnabledText: 'rgb(255,255,255)',
+  buttonDisabledText: 'rgb(255,255,255)',
 };

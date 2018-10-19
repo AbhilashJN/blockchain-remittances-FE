@@ -41,7 +41,7 @@ const PaymentsView = props => (
         )}
     </styles.Field>
     <styles.Button onPress={props.verifyReceiver} enabled>
-      <styles.ButtonText>Verify</styles.ButtonText>
+      <styles.ButtonText enabled>Verify</styles.ButtonText>
     </styles.Button>
     { props.isReceiverVerified && (
       <>
@@ -51,7 +51,7 @@ const PaymentsView = props => (
           <styles.ReceiverBankAccount>{props.receiverBankAccountID}</styles.ReceiverBankAccount>
         </styles.ReceiverInfoCard>
         <styles.Field>
-          <styles.FieldName>Amount</styles.FieldName>
+          <styles.FieldName>Enter Amount</styles.FieldName>
           <styles.FieldBody>
             <styles.FieldCurrency>{props.senderCurrency}</styles.FieldCurrency>
             <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
@@ -61,7 +61,7 @@ const PaymentsView = props => (
     </>
     )}
     <styles.Button onPress={props.makePayment} enabled={props.isReceiverVerified}>
-      <styles.ButtonText>Make Payment</styles.ButtonText>
+      <styles.ButtonText enabled={props.isReceiverVerified}>Make Payment</styles.ButtonText>
     </styles.Button>
   </styles.Container>
 );
