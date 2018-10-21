@@ -8,9 +8,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
+    "pubnub": "^4.21.6",
+    "pubnub-react": "^1.2.0",
     "react": "16.5.0",
     "react-native": "0.57.1",
     "react-native-material-dropdown": "^0.11.1",
+    "react-native-push-notification": "^3.1.2",
     "react-navigation": "^2.17.0",
     "rn-sliding-up-panel": "^1.2.1",
     "styled-components": "^3.4.9"
