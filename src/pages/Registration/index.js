@@ -37,7 +37,21 @@ class Registration extends React.Component {
         this.props.navigation.navigate('AuthLoad');
       }
 
+      verifyBankName=() => this.state.BankName.length > 0
+
+      verifyPhoneNumber=() => new RegExp('[0-9]{10,12}').test(this.state.PhoneNumber)
+
+
+      verifyBankAccountID=() => this.state.BankAccountID.length > 0
+
+      verifyAllInput=() => this.verifyBankName()
+      && this.verifyPhoneNumber && this.verifyBankAccountID
+
       doRegistration=() => {
+        if (!this.verifyAllInput()) {
+          alert('enter valid input for all fields');
+          return;
+        }
         this.setState({ loading: true });
         const payload = {
           BankName: this.state.BankName,

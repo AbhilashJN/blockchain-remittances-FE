@@ -30,7 +30,7 @@ class Home extends React.Component {
           if (token.os === 'ios') {
             this.pubnub.push.addChannels(
               {
-                channels: [props.navation.getParam('userCredentials').BankAccountID],
+                channels: [props.navigation.getParam('userCredentials').BankAccountID],
                 device: token.token,
                 pushGateway: 'apns',
               },
@@ -40,7 +40,7 @@ class Home extends React.Component {
             alert('subing to notif channel');
             this.pubnub.push.addChannels(
               {
-                channels: [props.navation.getParam('userCredentials').BankAccountID],
+                channels: [props.navigation.getParam('userCredentials').BankAccountID],
                 device: token.token,
                 pushGateway: 'gcm', // apns, gcm, mpns
               },
