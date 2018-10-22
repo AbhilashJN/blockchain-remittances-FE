@@ -19,18 +19,37 @@ class Home extends React.Component {
 
     constructor(props) {
       super(props);
+      this.publishKey = 'pub-c-6afff62e-d5f2-4369-9bed-5baabcf26564';
+      this.subscribeKey = 'sub-c-302c34e4-d1c4-11e8-b41d-e643bd6bdd68';
       this.pubnub = new PubNubReact({
-        publishKey: 'pub-c-6afff62e-d5f2-4369-9bed-5baabcf26564',
-        subscribeKey: 'sub-c-302c34e4-d1c4-11e8-b41d-e643bd6bdd68',
+        publishKey: this.publishKey,
+        subscribeKey: this.subscribeKey,
       });
       this.pubnub.init(this);
       PushNotification.configure({
         // Called when Token is generated.
-        onRegister: (token) => {
+        onRegister: async (token) => {
+          const bankAccountID = props.navigation.getParam('userCredentials').BankAccountID;
+          // alert(`bankAccountID: ${bankAccountID}`);
+          // alert(`token.os: ${token.os}`);
+          // const remURL = `http://pubsub.pubnub.com/v1/push/sub-key/${this.subscribeKey}/devices/${token.token}/remove?type=gcm`;
+          // alert(`remURL: ${remURL}`);
+          // fetch(`http://${utils.localhostURL}:8080/ping?Value=[ACC:${bankAccountID}----${remURL}]`).then(() => alert('pass 1')).catch(() => alert('fail 1'));
+          // const respA = await fetch(remURL);
+          // if (!respA.ok) {
+          //   alert('disassociation of channels with device failed');
+          // }
+          // const addURL = `http://pubsub.pubnub.com/v1/push/sub-key/${this.subscribeKey}/devices/${token.token}?add=${bankAccountID}&type=gcm`;
+          // alert(`addURL: ${addURL}`);
+          // fetch(`http://${utils.localhostURL}:8080/ping?Value=[ACC:${bankAccountID}----${addURL}]`).then(() => alert('pass 2')).catch(() => alert('fail 2'));
+          // const respB = await fetch(addURL);
+          // if (!respB.ok) {
+          //   alert(`association of ${bankAccountID} channel with device failed`);
+          // }
           if (token.os === 'ios') {
             this.pubnub.push.addChannels(
               {
-                channels: [props.navation.getParam('userCredentials').BankAccountID],
+                channels: [bankAccountID],
                 device: token.token,
                 pushGateway: 'apns',
               },
@@ -40,7 +59,7 @@ class Home extends React.Component {
             alert('subing to notif channel');
             this.pubnub.push.addChannels(
               {
-                channels: [props.navation.getParam('userCredentials').BankAccountID],
+                channels: [bankAccountID],
                 device: token.token,
                 pushGateway: 'gcm', // apns, gcm, mpns
               },

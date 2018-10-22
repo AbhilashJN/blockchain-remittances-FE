@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/abhilashnambissan/sp/blockchain-remittances-FE/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "/Users/sreekarnimbalkar/blockchainProject/blockchain-remittances-FE/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/abhilashnambissan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/6b649ad6a5a0312b27909578d0f2fb7b/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/Users/sreekarnimbalkar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/128f68d36b12fdc009c210592a16763f/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
