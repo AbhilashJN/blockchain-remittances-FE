@@ -91,6 +91,21 @@ export const ButtonText = styled.Text`
 `;
 
 
+export const ButtonOutline = styled.TouchableOpacity`
+    border-width:1px;
+    border-color: ${props => props.theme.buttonEnabled};
+    align-self:center;
+    padding:10px;
+    border-radius:5px;
+`;
+
+
+export const ButtonOutlineText = styled.Text`
+    color:${props => props.theme.buttonEnabled};
+    font-size:15px;
+    font-weight:bold;
+`;
+
 export const ReceiverInfoCard = styled.View`
     background-color:rgb(219, 228, 238);    
     margin:5px;

@@ -41,9 +41,9 @@ const PaymentsView = props => (
           </styles.FieldBody>
         )}
     </styles.Field>
-    <styles.Button onPress={props.verifyReceiver} enabled>
-      <styles.ButtonText enabled>Verify</styles.ButtonText>
-    </styles.Button>
+    <styles.ButtonOutline onPress={props.verifyReceiver}>
+      <styles.ButtonOutlineText>VERIFY</styles.ButtonOutlineText>
+    </styles.ButtonOutline>
     { props.isReceiverVerified && (
       <>
         <styles.ReceiverInfoCard>
