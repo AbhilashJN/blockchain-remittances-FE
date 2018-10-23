@@ -11,36 +11,38 @@ export const Field = styled.View`
     justify-content:flex-start
 `;
 
+
 export const FieldName = styled.Text`
     text-align:left;
     font-size:15px;
-    color:white;
-    font-weight:bold
+    color:rgb(172,172,172);
 `;
+
 
 export const FieldBody = styled.View`
 flex-direction:row;
 justify-content:space-between;
+align-items:center;
 `;
+
 
 export const FieldCurrency = styled.Text`
 font-size:20px;
-color:white;
+color:rgb(80,80,80);
 font-weight:bold;
-margin-top:20px;
+flex:1
 `;
 
 export const FieldInput = styled.TextInput`
-    border-left-width:0px;
-    border-right-width:0px;
-    border-top-width:0px;
-    border-bottom-width:1px;
-    border-color: white;
-    font-size:20px;
-    color:white;
-    font-weight:bold;
-    width:${(Dimensions.get('window').width * 0.75)};
-    `;
+border-left-width:0px;
+border-right-width:0px;
+border-top-width:0px;
+border-bottom-width:1px;
+border-color: rgb(239,239,239);
+font-size:20px;
+color:rgb(50,50,50);
+flex:3
+`;
 
 export const ActionRow = styled.View`
 flex-direction:row;
@@ -50,16 +52,15 @@ padding-vertical:10px
 
 
 export const Button = styled.TouchableOpacity`
-    background-color: 'rgb(249, 251, 252)';
+    background-color: ${props => props.theme.buttonEnabled};
     width: ${(Dimensions.get('window').width * 0.3)};
-    padding:10px;
+    padding-vertical:15px;
     border-radius:5px;
     margin-vertical:10px;
     align-items:center;
-    align-self:center;
-    elevation:3px
 `;
 
 export const ButtonText = styled.Text`
-    color: ${props => props.theme.buttonText}
+    color: ${props => props.theme.buttonEnabledText};
+    font-size:20px
 `;

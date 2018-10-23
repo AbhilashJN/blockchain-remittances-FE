@@ -8,18 +8,18 @@ const OperationResultView = props => (
   <styles.Container>
     <styles.ResultIcon source={props.result === 'success' ? tickIcon : crossIcon} />
     <styles.ResultText>
-      {`${props.type} ${props.result}!`}
+      {props.resultText}
     </styles.ResultText>
     {props.messages && (
-    <styles.Message>
-      {
+      <styles.Message>
+        {
         props.messages.map(msg => <styles.MessageText key={msg}>{msg}</styles.MessageText>)
-      }
-    </styles.Message>
+        }
+      </styles.Message>
     )}
-    <styles.Button onPress={props.goToPage('Home', { theme: props.theme })}>
+    <styles.Button onPress={props.goToPage}>
       <styles.ButtonText>
-              Home
+        Home
       </styles.ButtonText>
     </styles.Button>
   </styles.Container>

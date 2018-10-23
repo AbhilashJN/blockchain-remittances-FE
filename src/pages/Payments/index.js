@@ -1,17 +1,19 @@
 import React from 'react';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { StackActions } from 'react-navigation';
 import { ThemeProvider } from 'styled-components';
 import PaymentsView from '../../components/PaymentsView';
 import Loader from '../../components/Loader';
 import * as utils from '../../utils/common';
 import contacts from './data';
+import OperationResultView from '../../components/OperationResultView';
 
 class Payments extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-      title: 'Payments',
+      title: 'Make Payment',
       headerStyle: {
         backgroundColor: navigation.getParam('theme').headerBackground,
       },
+      headerTintColor: navigation.getParam('theme').headerText,
     });
 
     state={
@@ -29,10 +31,11 @@ class Payments extends React.Component {
       loading: false,
       receiverMode: 'numpad',
       exchangeRate: 80,
+      operationResult: null,
     }
 
     componentDidMount() {
-      this.getSenderPhone();
+      this.getCredentials();
     }
 
     updateField=fieldName => (fieldValue) => {
@@ -43,17 +46,12 @@ class Payments extends React.Component {
       this.setState({ receiverMode: mode });
     }
 
-    clearStackAndGoToPage=(pageName, params) => {
-      const resetAction = StackActions.reset({
-        index: 0,
-        actions: [
-          NavigationActions.navigate({ routeName: pageName, params }),
-        ],
-      });
-      this.props.navigation.dispatch(resetAction);
+    goToHomePage=() => {
+      const popAction = StackActions.pop();
+      this.props.navigation.dispatch(popAction);
     }
 
-    getSenderPhone=() => {
+    getCredentials=() => {
       utils.retrieveData('credentials')
         .then(JSON.parse).then((creds) => {
           this.setState({
@@ -134,45 +132,65 @@ class Payments extends React.Component {
         .then((responseText) => {
           let messages;
           let result = '';
+          let resultText = '';
           if (responseText === 'success') {
-            result = responseText;
+            result = 'success';
+            resultText = 'Payment Successful!';
             messages = [`Amount debited from your account : ${this.state.senderCurrency} ${this.state.Amount}`,
               `Amount credited to ${this.state.receiverName}'s account : ${this.state.receiverCurrency} ${this.state.exchangeRate * this.state.Amount}`];
           } else {
-            result = `failed! ${responseText}`;
+            result = 'failure';
+            resultText = `Payment Failed! ${responseText}`;
           }
-          this.clearStackAndGoToPage('OperationResult', {
-            type: 'Payment',
-            result,
-            messages,
-            theme: this.props.navigation.getParam('theme'),
+          this.setState({
+            operationResult: {
+              result,
+              resultText,
+              messages,
+            },
+            loading: false,
           });
         });
     }
 
     render() {
+      if (this.state.loading) {
+        return (
+          <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+            <Loader />
+          </ThemeProvider>
+        );
+      }
+      if (this.state.operationResult) {
+        return (
+          <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+            <OperationResultView
+              {...this.state.operationResult}
+              goToPage={this.goToHomePage}
+            />
+          </ThemeProvider>
+        );
+      }
       return (
-        this.state.loading
-          ? <Loader theme={this.props.navigation.getParam('theme')} />
-          : (
-            <ThemeProvider theme={this.props.navigation.getParam('theme')}>
-              <PaymentsView
-                makePayment={this.makePayment}
-                update={this.updateField}
-                verifyReceiver={this.verifyReceiver}
-                isReceiverVerified={this.state.isReceiverVerified}
-                receiverName={this.state.receiverName}
-                receiverBankName={this.state.receiverBankName}
-                receiverPhone={this.state.receiverPhone}
-                contacts={contacts}
-                receiverMode={this.state.receiverMode}
-                switchReceiverMode={this.switchReceiverMode}
-                exchangeRate={this.state.exchangeRate}
-                senderCurrency={this.state.senderCurrency}
-                receiverCurrency={this.state.receiverCurrency}
-              />
-            </ThemeProvider>
-          )
+        <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+          <PaymentsView
+            makePayment={this.makePayment}
+            update={this.updateField}
+            verifyReceiver={this.verifyReceiver}
+            isReceiverVerified={this.state.isReceiverVerified}
+            receiverName={this.state.receiverName}
+            receiverBankName={this.state.receiverBankName}
+            receiverBankAccountID={this.state.receiverBankAccountID}
+            receiverPhone={this.state.receiverPhone}
+            contacts={contacts}
+            receiverMode={this.state.receiverMode}
+            switchReceiverMode={this.switchReceiverMode}
+            exchangeRate={this.state.exchangeRate}
+            senderCurrency={this.state.senderCurrency}
+            receiverCurrency={this.state.receiverCurrency}
+          />
+        </ThemeProvider>
+
       );
     }
 }

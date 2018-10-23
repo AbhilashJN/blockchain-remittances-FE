@@ -1,9 +1,10 @@
 import React from 'react';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { ThemeProvider } from 'styled-components';
 import RegistrationView from '../../components/RegistrationView';
 import Loader from '../../components/Loader';
+import OperationResultView from '../../components/OperationResultView';
 import * as utils from '../../utils/common';
-import { themeA, themeB } from '../../utils/themes';
+import { themeA } from '../../utils/themes';
 
 class Registration extends React.Component {
     static navigationOptions = {
@@ -18,6 +19,7 @@ class Registration extends React.Component {
         BankAccountID: '',
         bankNames: [],
         loading: false,
+        operationResult: null,
       }
 
       componentDidMount() {
@@ -31,17 +33,25 @@ class Registration extends React.Component {
         this.setState({ [fieldName]: fieldValue });
       }
 
-      clearStackAndGoToPage=(pageName, params) => {
-        const resetAction = StackActions.reset({
-          index: 0,
-          actions: [
-            NavigationActions.navigate({ routeName: pageName, params }),
-          ],
-        });
-        this.props.navigation.dispatch(resetAction);
+      goToAuth=() => {
+        this.props.navigation.navigate('AuthLoad');
       }
 
+      verifyBankName=() => this.state.BankName.length > 0
+
+      verifyPhoneNumber=() => new RegExp('[0-9]{10,12}').test(this.state.PhoneNumber)
+
+
+      verifyBankAccountID=() => this.state.BankAccountID.length > 0
+
+      verifyAllInput=() => this.verifyBankName()
+      && this.verifyPhoneNumber && this.verifyBankAccountID
+
       doRegistration=() => {
+        if (!this.verifyAllInput()) {
+          alert('enter valid input for all fields');
+          return;
+        }
         this.setState({ loading: true });
         const payload = {
           BankName: this.state.BankName,
@@ -58,35 +68,52 @@ class Registration extends React.Component {
           if (resp.status === 201) {
             return resp.json();
           }
-          alert(resp.status);                                                     //eslint-disable-line
+          alert(resp.status);                                                    //eslint-disable-line
           throw new Error('Registration failed');
         }).then((respJson) => { utils.storeData('credentials', { ...respJson }); })
-          .then(() => {                                                           //eslint-disable-line
-            this.clearStackAndGoToPage('OperationResult', {
-              type: 'Registration',
-              result: 'success',
-              theme: this.state.BankName === 'ALPHA' ? themeA : themeB,
-              BankName: this.state.BankName,
+          .then(() => {
+            this.setState({
+              loading: false,
+              operationResult: {
+                result: 'success',
+                resultText: 'Registration Successful!',
+              },
             });
           })
-          .catch((err) => { alert(err); });                                       //eslint-disable-line
+          .catch(() => {
+            alert('Registration failed! Please try again');                 //eslint-disable-line
+            this.setState({ loading: false });
+          });
       }
 
       render() {
-        return (
-          this.state.loading
-            ? <Loader theme={themeA} />
-            : (
-              <RegistrationView
-                doRegistration={this.doRegistration}
-                update={this.updateField}
-                CustomerName={this.state.CustomerName}
-                PhoneNumber={this.state.PhoneNumber}
-                BankName={this.state.BankName}
-                BankAccountID={this.state.BankAccountID}
-                bankNames={this.state.bankNames}
+        if (this.state.loading) {
+          return (
+            <ThemeProvider theme={themeA}>
+              <Loader />
+            </ThemeProvider>
+          );
+        }
+        if (this.state.operationResult) {
+          return (
+            <ThemeProvider theme={themeA}>
+              <OperationResultView
+                {...this.state.operationResult}
+                goToPage={this.goToAuth}
               />
-            )
+            </ThemeProvider>
+          );
+        }
+        return (
+          <RegistrationView
+            doRegistration={this.doRegistration}
+            update={this.updateField}
+            CustomerName={this.state.CustomerName}
+            PhoneNumber={this.state.PhoneNumber}
+            BankName={this.state.BankName}
+            BankAccountID={this.state.BankAccountID}
+            bankNames={this.state.bankNames}
+          />
         );
       }
 }

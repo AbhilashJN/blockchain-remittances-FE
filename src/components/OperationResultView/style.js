@@ -1,19 +1,19 @@
 import styled from 'styled-components';
-import { Dimensions } from 'react-native';
 
 export const Container = styled.View`
-flex:1;
-justify-content:center;
-align-items:center;
-background-color:${props => props.theme.cardBackground}
+    flex:1;
+    justify-content:center;
+    align-items:stretch;
+    background-color:${props => props.theme.cardBackground};
+    padding:20px;
 `;
 
 
 export const ResultText = styled.Text`
-font-weight:bold;
-color:white;
-font-size:30px;
-padding:20px;
+    font-weight:bold;
+    color:white;
+    font-size:30px;
+    padding:20px;
 `;
 
 
@@ -23,18 +23,16 @@ export const ResultIcon = styled.Image`
 
 
 export const Button = styled.TouchableOpacity`
-    background-color: rgb(249, 251, 252);
-    width: ${(Dimensions.get('window').width * 0.6)};
-    padding:10px;
+    background-color: ${props => props.theme.buttonEnabled};
+    padding-vertical:15px;
     border-radius:5px;
     margin-vertical:10px;
     align-items:center;
-    align-self:center;
-    elevation:3px
 `;
 
 export const ButtonText = styled.Text`
-    color: ${props => props.theme.buttonText};
+    color: ${props => props.theme.buttonEnabledText};
+    font-size:20px
 `;
 
 export const Message = styled.View`
@@ -42,12 +40,12 @@ export const Message = styled.View`
     border-radius:5px;
     elevation:-3;
     padding:10px;
-    marginVertical:25px
+    margin-vertical:25px
 `;
 
 
 export const MessageText = styled.Text`
-color : white;
-font-size:15px;
-font-weight:bold;
+    color : white;
+    font-size:15px;
+    font-weight:bold;
 `;

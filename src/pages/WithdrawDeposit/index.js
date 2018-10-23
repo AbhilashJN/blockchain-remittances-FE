@@ -1,7 +1,9 @@
 import React from 'react';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { StackActions } from 'react-navigation';
 import { ThemeProvider } from 'styled-components';
 import WithdrawDepositView from '../../components/WithdrawDepositView';
+import Loader from '../../components/Loader';
+import OperationResultView from '../../components/OperationResultView';
 import * as utils from '../../utils/common';
 
 class WithdrawDeposit extends React.Component {
@@ -15,20 +17,17 @@ class WithdrawDeposit extends React.Component {
     state={
       Amount: '',
       credentials: { BankInfo: { NativeCurrency: 'INR' } },
+      operationResult: null,
+      loading: false,
     }
 
     componentDidMount() {
       this.getAccountID();
     }
 
-    clearStackAndGoToPage=(pageName, params) => {
-      const resetAction = StackActions.reset({
-        index: 0,
-        actions: [
-          NavigationActions.navigate({ routeName: pageName, params }),
-        ],
-      });
-      this.props.navigation.dispatch(resetAction);
+    goToHomePage=() => {
+      const popAction = StackActions.pop();
+      this.props.navigation.dispatch(popAction);
     }
 
     getAccountID=() => utils.retrieveData('credentials').then(JSON.parse).then((creds) => { this.setState({ credentials: creds }); })
@@ -43,6 +42,7 @@ class WithdrawDeposit extends React.Component {
         alert('Enter valid amount');                    //eslint-disable-line
         return;
       }
+      this.setState({ loading: true });
       const payload = {
         Amount: this.state.Amount,
         AccountID: this.state.credentials.BankAccountID,
@@ -57,13 +57,51 @@ class WithdrawDeposit extends React.Component {
           body: utils.transformPOSTpayload(payload),
         })
         .then(resp => resp.text())
-        .then((responseText) => { this.clearStackAndGoToPage('OperationResult', { type: actionType, result: responseText, theme: this.props.navigation.getParam('theme') }); });
+        .then((responseText) => {
+          let resultText = '';
+          let result = '';
+          if (responseText === 'success') {
+            resultText = `${actionType} Successful!`;
+            result = 'success';
+          } else {
+            resultText = `${actionType} Failed! ${responseText}`;
+            result = 'failure';
+          }
+          this.setState({
+            loading: false,
+            operationResult: {
+              resultText,
+              result,
+            },
+          });
+        });
     }
 
     render() {
+      if (this.state.loading) {
+        return (
+          <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+            <Loader />
+          </ThemeProvider>
+        );
+      }
+      if (this.state.operationResult) {
+        return (
+          <ThemeProvider theme={this.props.navigation.getParam('theme')}>
+            <OperationResultView
+              {...this.state.operationResult}
+              goToPage={this.goToHomePage}
+            />
+          </ThemeProvider>
+        );
+      }
       return (
         <ThemeProvider theme={this.props.navigation.getParam('theme')}>
-          <WithdrawDepositView updateAmount={this.updateAmount} doAction={this.doAction} currency={this.state.credentials.BankInfo.NativeCurrency} />
+          <WithdrawDepositView
+            updateAmount={this.updateAmount}
+            doAction={this.doAction}
+            currency={this.state.credentials.BankInfo.NativeCurrency}
+          />
         </ThemeProvider>
       );
     }

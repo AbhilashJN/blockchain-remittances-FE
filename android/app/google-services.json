@@ -1,0 +1,42 @@
+{
+    "project_info": {
+      "project_number": "300257186274",
+      "firebase_url": "https://blockchain-remittances-push.firebaseio.com",
+      "project_id": "blockchain-remittances-push",
+      "storage_bucket": "blockchain-remittances-push.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:300257186274:android:8b802f1ba9f303e8",
+          "android_client_info": {
+            "package_name": "com.blockchainremittancesfe"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "300257186274-ctp50778ltnoun457cmar578d0509574.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyBuBe6IXCNjLa3CP4_4LNiGNmF_WaD0kIA"
+          }
+        ],
+        "services": {
+          "analytics_service": {
+            "status": 1
+          },
+          "appinvite_service": {
+            "status": 1,
+            "other_platform_oauth_client": []
+          },
+          "ads_service": {
+            "status": 2
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

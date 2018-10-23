@@ -4,7 +4,7 @@ import * as styles from './style';
 const WithdrawDepositView = props => (
   <styles.Container>
     <styles.Field>
-      <styles.FieldName>Amount</styles.FieldName>
+      <styles.FieldName>Enter Amount</styles.FieldName>
       <styles.FieldBody>
         <styles.FieldCurrency>{props.currency}</styles.FieldCurrency>
         <styles.FieldInput keyboardType="number-pad" onChangeText={props.updateAmount} />
