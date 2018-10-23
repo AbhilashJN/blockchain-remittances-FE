@@ -3,22 +3,19 @@ import SlideUpPanel from 'rn-sliding-up-panel';
 import AccountDetailsView from '../DetailsView';
 import Loader from '../Loader';
 import * as styles from './style';
-import placeholderIcon from '../../assets/64x64ph.png';
+import paymentIcon from '../../assets/menuPayment.png';
+import newRecipientIcon from '../../assets/menuNewRecipient.png';
 
 const HomeView = props => (
   <styles.Container>
     <styles.BankName>{props.userCredentials.BankName}</styles.BankName>
     <styles.MenuOption onPress={props.goToPage('Payments')}>
-      <styles.MenuOptionIcon source={placeholderIcon} />
+      <styles.MenuOptionIcon source={paymentIcon} />
       <styles.MenuOptionName>Make Payment</styles.MenuOptionName>
     </styles.MenuOption>
-    <styles.MenuOption onPress={props.goToPage('Details')}>
-      <styles.MenuOptionIcon source={placeholderIcon} />
-      <styles.MenuOptionName>Details</styles.MenuOptionName>
-    </styles.MenuOption>
     <styles.MenuOption onPress={props.goToPage('WithdrawDeposit')}>
-      <styles.MenuOptionIcon source={placeholderIcon} />
-      <styles.MenuOptionName>New Recipient</styles.MenuOptionName>
+      <styles.MenuOptionIcon source={newRecipientIcon} />
+      <styles.MenuOptionName>Withdraw/Deposit</styles.MenuOptionName>
     </styles.MenuOption>
     <SlideUpPanel
       {...styles.SlideUpPanelStyles}
@@ -40,26 +37,6 @@ const HomeView = props => (
           />
         )}
     </SlideUpPanel>
-    {/* <styles.Button onPress={props.goToPage('Payments')}>
-      <styles.ButtonText>
-             Make a Payment
-      </styles.ButtonText>
-    </styles.Button>
-    <styles.Button onPress={props.goToPage('Details')}>
-      <styles.ButtonText>
-              View Transaction Details
-      </styles.ButtonText>
-    </styles.Button>
-    <styles.Button onPress={props.goToPage('WithdrawDeposit')}>
-      <styles.ButtonText>
-              Withdraw/Deposit
-      </styles.ButtonText>
-    </styles.Button> */}
-    {/* <styles.Button onPress={props.goToPage('NewRecipient')}>
-      <styles.ButtonText>
-              New Recipient
-      </styles.ButtonText>
-    </styles.Button> */}
   </styles.Container>
 );
 

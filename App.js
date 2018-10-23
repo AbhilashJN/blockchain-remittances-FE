@@ -3,7 +3,6 @@ import { createStackNavigator, createSwitchNavigator } from 'react-navigation';
 import Home from './src/pages/Home';
 import Registration from './src/pages/Registration';
 import Payments from './src/pages/Payments';
-import Details from './src/pages/Details';
 import Login from './src/pages/Login';
 import NewRecipient from './src/pages/NewRecipient';
 import WithdrawDeposit from './src/pages/WithdrawDeposit';
@@ -12,7 +11,6 @@ import WithdrawDeposit from './src/pages/WithdrawDeposit';
 const AppStack = createStackNavigator(
   {
     Home,
-    Details,
     Payments,
     NewRecipient,
     WithdrawDeposit,

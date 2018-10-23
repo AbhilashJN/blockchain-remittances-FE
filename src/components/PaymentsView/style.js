@@ -15,7 +15,9 @@ export const PageInfo = styled.View`
 `;
 
 export const PageIcon = styled.Image`
-    margin:30px;
+    margin:10px;
+    height:128px;
+    width:128px;
 `;
 
 export const PageInfoText = styled.Text`
