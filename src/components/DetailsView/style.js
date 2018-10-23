@@ -6,10 +6,24 @@ export const Container = styled.View`
     background-color:${props => props.theme.cardBackground};
 `;
 
-export const DetailsHead = styled.View`
-    padding-vertical:10px;
-    padding-horizontal:20px;
-    background-color:${props => props.theme.detailsHeadBg};
+// export const DetailsHead = styled.View`
+//     padding-vertical:10px;
+//     padding-horizontal:20px;
+//     background-color:${props => props.theme.detailsHeadBg};
+// `;
+
+export const DetailsHead = styled.ImageBackground`
+padding-vertical:10px;
+padding-horizontal:20px;
+`;
+
+export const DetailsHeadOverlay = styled.View`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backgroundColor: 'rgba(0,0,0,0.5)',
 `;
 
 

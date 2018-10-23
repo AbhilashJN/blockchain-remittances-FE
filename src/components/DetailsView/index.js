@@ -1,11 +1,13 @@
 import React from 'react';
 import * as styles from './style';
+import headerBg from '../../assets/myAccountBg.jpg';
 
 class DetailsView extends React.PureComponent {
   render() {
     return (
       <styles.Container>
-        <styles.DetailsHead>
+        <styles.DetailsHead source={headerBg}>
+          <styles.DetailsHeadOverlay />
           <styles.HeaderText>My Account</styles.HeaderText>
           <styles.AccountInfo>
             <styles.AccountDetails>
