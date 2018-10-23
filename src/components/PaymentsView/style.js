@@ -14,7 +14,9 @@ export const PageInfo = styled.View`
     align-items:center;
 `;
 
-export const PageIcon = styled.Image``;
+export const PageIcon = styled.Image`
+    margin:30px;
+`;
 
 export const PageInfoText = styled.Text`
     color:rgb(50,50,50);

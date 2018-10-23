@@ -1,11 +1,12 @@
 import React from 'react';
 import { Dropdown } from 'react-native-material-dropdown';
 import * as styles from './style';
+import placeholderIcon from '../../assets/128x128ph.png';
 
 const RegistrationView = props => (
   <styles.Container>
     <styles.PageInfo>
-      <styles.PageIcon />
+      <styles.PageIcon source={placeholderIcon} />
       <styles.PageInfoText>
         Please help us with your bank details which are required to help you make transactions.
       </styles.PageInfoText>

@@ -43,11 +43,13 @@ export const MenuOption = styled.TouchableOpacity`
     align-items:center;
 `;
 
-export const MenuOptionIcon = styled.Image``;
+export const MenuOptionIcon = styled.Image`
+`;
 
 export const MenuOptionName = styled.Text`
     color:rgb(50,50,50);
     font-size:20px;
+    margin-left:30px;
 `;
 
 

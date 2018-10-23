@@ -4,11 +4,12 @@ import * as styles from './style';
 import userVerifiedIcon from '../../assets/user.png';
 import contactsIcon from '../../assets/contacts.png';
 import numpadIcon from '../../assets/numpad.png';
+import placeholder from '../../assets/128x128ph.png';
 
 const PaymentsView = props => (
   <styles.Container>
     <styles.PageInfo>
-      <styles.PageIcon />
+      <styles.PageIcon source={placeholder} />
       <styles.PageInfoText>
       Please help us with bank details of your recipient
       which are required to help you make transactions.
