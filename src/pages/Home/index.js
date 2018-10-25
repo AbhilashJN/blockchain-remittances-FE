@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { Dimensions } from 'react-native';
 import PubNubReact from 'pubnub-react';
 import HomeView from '../../components/HomeView';
 import * as utils from '../../utils/common';
@@ -56,7 +57,7 @@ class Home extends React.Component {
             );
             // Send iOS Notification from debug console: {"pn_apns":{"aps":{"alert":"Hello World."}}}
           } else if (token.os === 'android') {
-            alert('subing to notif channel');
+            // alert('subing to notif channel');
             this.pubnub.push.addChannels(
               {
                 channels: [bankAccountID],
@@ -71,7 +72,10 @@ class Home extends React.Component {
         // See: https://support.pubnub.com/support/solutions/articles/14000043605-how-can-i-troubleshoot-my-push-notification-issues-
         // Called when a remote or local notification is opened or received.
         onNotification: (notification) => {
-          alert('NOTIFICATION:');
+          // alert(`NOTIFICATION:${notification.message}`);
+          if (notification.userInteraction) {
+            this.sliderRef.transitionTo(Dimensions.get('window').height);
+          }
           // Do something with the notification.
           // Required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
           // notification.finish(PushNotificationIOS.FetchResult.NoData);
@@ -88,8 +92,13 @@ class Home extends React.Component {
       loading: false,
     }
 
+
     componentDidMount() {
       this.getAccountDetails();
+    }
+
+    setSliderRef=(ref) => {
+      this.sliderRef = ref;
     }
 
     getAccountDetails=() => {
@@ -132,6 +141,7 @@ class Home extends React.Component {
             userCredentials={this.state.userCredentials}
             accountDetails={this.state.accountDetails}
             loading={this.state.loading}
+            setSliderRef={this.setSliderRef}
           />
 
         </ThemeProvider>

@@ -21,6 +21,7 @@ const HomeView = props => (
       {...styles.SlideUpPanelStyles}
       onDrag={props.togglePageHeader}
       onDragStart={props.refreshAccountDetails}
+      ref={props.setSliderRef}
     >
       {props.loading ? (
         <styles.BottomTabPlaceholder theme={props.theme}>
