@@ -20,7 +20,7 @@ class Details extends React.Component {
       this.getTransactionDetails();
     }
 
-    getCredentials=() => utils.retrieveData('credentials').then(JSON.parse)
+    getCredentials=() => utils.retrieveData('credentials')
 
     getTransactionDetails=() => {
       this.getCredentials()

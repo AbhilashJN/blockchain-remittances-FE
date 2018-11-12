@@ -13,7 +13,7 @@ export const storeData = async (key, data) => {
 export const retrieveData = async (key) => {
   try {
     const value = await AsyncStorage.getItem(key);
-    return value;
+    return JSON.parse(value);
   } catch (error) {
     // Error retrieving data
     alert('error');  //eslint-disable-line

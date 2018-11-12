@@ -31,22 +31,6 @@ class Home extends React.Component {
         // Called when Token is generated.
         onRegister: async (token) => {
           const bankAccountID = props.navigation.getParam('userCredentials').BankAccountID;
-          // alert(`bankAccountID: ${bankAccountID}`);
-          // alert(`token.os: ${token.os}`);
-          // const remURL = `http://pubsub.pubnub.com/v1/push/sub-key/${this.subscribeKey}/devices/${token.token}/remove?type=gcm`;
-          // alert(`remURL: ${remURL}`);
-          // fetch(`http://${utils.localhostURL}:8080/ping?Value=[ACC:${bankAccountID}----${remURL}]`).then(() => alert('pass 1')).catch(() => alert('fail 1'));
-          // const respA = await fetch(remURL);
-          // if (!respA.ok) {
-          //   alert('disassociation of channels with device failed');
-          // }
-          // const addURL = `http://pubsub.pubnub.com/v1/push/sub-key/${this.subscribeKey}/devices/${token.token}?add=${bankAccountID}&type=gcm`;
-          // alert(`addURL: ${addURL}`);
-          // fetch(`http://${utils.localhostURL}:8080/ping?Value=[ACC:${bankAccountID}----${addURL}]`).then(() => alert('pass 2')).catch(() => alert('fail 2'));
-          // const respB = await fetch(addURL);
-          // if (!respB.ok) {
-          //   alert(`association of ${bankAccountID} channel with device failed`);
-          // }
           if (token.os === 'ios') {
             this.pubnub.push.addChannels(
               {
@@ -68,8 +52,6 @@ class Home extends React.Component {
             // Send Android Notification from debug console: {"pn_gcm":{"data":{"message":"Hello World."}}}
           }
         },
-        // Something not working?
-        // See: https://support.pubnub.com/support/solutions/articles/14000043605-how-can-i-troubleshoot-my-push-notification-issues-
         // Called when a remote or local notification is opened or received.
         onNotification: (notification) => {
           // alert(`NOTIFICATION:${notification.message}`);
@@ -143,7 +125,6 @@ class Home extends React.Component {
             loading={this.state.loading}
             setSliderRef={this.setSliderRef}
           />
-
         </ThemeProvider>
       );
     }

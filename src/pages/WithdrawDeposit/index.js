@@ -30,7 +30,7 @@ class WithdrawDeposit extends React.Component {
       this.props.navigation.dispatch(popAction);
     }
 
-    getAccountID=() => utils.retrieveData('credentials').then(JSON.parse).then((creds) => { this.setState({ credentials: creds }); })
+    getAccountID=() => utils.retrieveData('credentials').then((creds) => { this.setState({ credentials: creds }); })
 
     updateAmount=(amount) => {
       this.setState({ Amount: amount });

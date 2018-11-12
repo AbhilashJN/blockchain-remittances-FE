@@ -17,35 +17,20 @@ const PaymentsView = props => (
     </styles.PageInfo>
     <styles.Field>
       <styles.FieldName>Recipient Phone number</styles.FieldName>
-      {props.receiverMode === 'numpad' ? (
-        <styles.FieldBody>
-          <styles.FieldInput
-            onChangeText={props.update('receiverPhone')}
-            keyboardType="phone-pad"
-          />
-        </styles.FieldBody>
-      )
-        : (
-          <styles.FieldBody>
-            <Dropdown
-              {...styles.DropdownStyles}
-              data={props.contacts}
-              label="Select contact"
-              onChangeText={(value) => { props.update('receiverPhone')(value); }}
-              labelExtractor={({ Name }) => Name}
-              valueExtractor={({ PhoneNumber }) => PhoneNumber}
-            />
-            <styles.FieldButton onPress={props.switchReceiverMode('numpad')}>
-              <styles.FieldIcon source={numpadIcon} />
-            </styles.FieldButton>
-          </styles.FieldBody>
-        )}
+      <styles.FieldBody>
+        <Dropdown
+          {...styles.DropdownStyles}
+          data={props.recipients}
+          label="Select recipient"
+          onChangeText={(value) => { props.getRecipientDetails(value); }}
+          labelExtractor={({ name }) => name}
+          valueExtractor={({ phoneNumber }) => phoneNumber}
+        />
+        <styles.FieldButton onPress={props.switchReceiverMode('numpad')}>
+          <styles.FieldIcon source={numpadIcon} />
+        </styles.FieldButton>
+      </styles.FieldBody>
     </styles.Field>
-    {!props.isReceiverVerified && (
-    <styles.ButtonOutline onPress={props.verifyReceiver}>
-      <styles.ButtonOutlineText>VERIFY</styles.ButtonOutlineText>
-    </styles.ButtonOutline>
-    )}
     { props.isReceiverVerified && (
       <>
         <styles.ReceiverInfoCard>
@@ -57,7 +42,7 @@ const PaymentsView = props => (
           <styles.FieldName>Enter Amount</styles.FieldName>
           <styles.FieldBody>
             <styles.FieldCurrency>{props.senderCurrency}</styles.FieldCurrency>
-            <styles.FieldInput onChangeText={props.update('Amount')} editable={props.isReceiverVerified} keyboardType="number-pad" />
+            <styles.FieldInput onChangeText={props.updateAmount} editable={props.isReceiverVerified} keyboardType="number-pad" />
           </styles.FieldBody>
           <styles.ConversionRate>{`Conv Rate : 1 ${props.senderCurrency} = ${props.exchangeRate} ${props.receiverCurrency}`}</styles.ConversionRate>
         </styles.Field>
