@@ -17,6 +17,10 @@ const HomeView = props => (
       <styles.MenuOptionIcon source={newRecipientIcon} />
       <styles.MenuOptionName>Withdraw/Deposit</styles.MenuOptionName>
     </styles.MenuOption>
+    <styles.MenuOption onPress={props.goToPage('NewRecipient')}>
+      <styles.MenuOptionIcon source={newRecipientIcon} />
+      <styles.MenuOptionName>Add New Recipient</styles.MenuOptionName>
+    </styles.MenuOption>
     <SlideUpPanel
       {...styles.SlideUpPanelStyles}
       onDrag={props.togglePageHeader}

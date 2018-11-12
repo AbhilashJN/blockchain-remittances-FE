@@ -111,7 +111,8 @@ export const ButtonOutlineText = styled.Text`
 export const ReceiverInfoCard = styled.View`
     background-color:rgb(219, 228, 238);    
     margin:5px;
-    padding:20px;
+    padding-horizontal:20px;
+    padding-vertical:10px;
     border-radius:5px;
     border-color:rgb(160, 184, 209);
     border-width:1px;
@@ -136,20 +137,17 @@ export const ReceiverBankAccount = styled.Text`
 
 
 export const DropdownStyles = {
-  baseColor: 'rgba(229, 229, 229, 0.6)',
-  textColor: 'white',
+  baseColor: 'rgb(229, 229, 229)',
+  textColor: 'rgb(50,50,50)',
   itemColor: 'rgb(71, 194, 255)',
   selectedItemColor: 'white',
   itemTextStyle: {
-    fontWeight: 'bold', padding: 10,
+    padding: 10,
   },
   itemPadding: 10,
   containerStyle: { flex: 1, marginRight: 10 },
   pickerStyle: { backgroundColor: 'rgb(0, 68, 102)' },
   dropdownPosition: 0,
-  style: {
-    fontWeight: 'bold',
-  },
   labelFontSize: 15,
   fontSize: 20,
 };

@@ -14,7 +14,6 @@ class Login extends React.Component {
 
   verifyCredentials=() => {
     utils.retrieveData('credentials')
-      .then(resp => JSON.parse(resp))
       .then((data) => {
         if (data !== null) {
           this.props.navigation.navigate('Home', { userCredentials: data, theme: data.BankName === 'ALPHA' ? themeA : themeB });
