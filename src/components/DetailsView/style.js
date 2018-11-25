@@ -62,7 +62,7 @@ export const BankAccountDetailsText = styled(DetailsText)`
 `;
 
 export const BalanceAmountText = styled(DetailsText)`
-    font-size:30px;
+    font-size:20px;
     font-weight:bold;
 `;
 
@@ -85,7 +85,7 @@ export const Transaction = styled.View`
 `;
 
 export const TransactionDetails = styled.View`
-    flex:3
+    flex:2
 `;
 
 export const TransactionAmount = styled.View`

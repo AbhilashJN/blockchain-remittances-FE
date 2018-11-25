@@ -10,15 +10,16 @@ export const Container = styled.View`
 
 
 export const ResultText = styled.Text`
+    color:rgb(50,50,50);
+    font-size:20px;
     font-weight:bold;
-    color:white;
-    font-size:30px;
     padding:20px;
+    text-align:center;
 `;
 
 
 export const ResultIcon = styled.Image`
-
+    align-self:center;
 `;
 
 
